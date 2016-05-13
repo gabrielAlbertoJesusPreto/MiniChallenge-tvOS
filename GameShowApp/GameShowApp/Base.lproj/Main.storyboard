@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-60-lIW">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-lS-AkQ">
+                                <rect key="frame" x="699" y="692" width="523" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.29537630081176758" blue="0.22452422976493835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Começar"/>
+                                <connections>
+                                    <segue destination="l0T-MW-uAK" kind="show" id="E6o-IG-qQQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTb-TY-G3s">
+                                <rect key="frame" x="699" y="802" width="523" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.6023905873298645" blue="0.03817952424287796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Conquistas"/>
+                                <connections>
+                                    <segue destination="ZJC-cf-7RM" kind="show" id="NGw-XX-edW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TESTFLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-tj-4u5">
+                                <rect key="frame" x="388" y="214" width="1144" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="OAV-nZ-2eS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="200"/>
+                                <color key="textColor" red="0.92263418436050415" green="0.93074637651443481" blue="0.94125837087631226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.069872938096523285" green="0.16718575358390808" blue="0.24616783857345581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wnW-tj-4u5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KTu-SD-b7z"/>
+                            <constraint firstItem="wnW-tj-4u5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="214" id="zEG-6V-SAc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="yzv-lS-AkQ" id="0jJ-F5-wc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="673"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sv2-sL-2Wl">
+            <objects>
+                <viewController id="l0T-MW-uAK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lzh-my-ECr"/>
+                        <viewControllerLayoutGuide type="bottom" id="MTc-r3-5zN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oRr-T7-AE3">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-EX-gpw">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NÚMERO DE JOGADORES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-Jb-OXy">
+                                <rect key="frame" x="334" y="123" width="1253" height="137"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlH-1T-gty">
+                                <rect key="frame" x="594" y="496" width="733" height="88"/>
+                                <color key="backgroundColor" red="0.3321911096572876" green="0.70478278398513794" blue="0.85090041160583496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="733" id="gSL-aZ-1Tv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="1 Jogador"/>
+                                <connections>
+                                    <segue destination="A6L-A4-pHi" kind="show" id="YEd-iL-NDi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN">
+                                <rect key="frame" x="594" y="606" width="733" height="88"/>
+                                <color key="backgroundColor" red="0.92203491926193237" green="0.40600723028182983" blue="0.46242129802703857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="733" id="AqZ-sF-81Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="2 Jogadores"/>
+                                <connections>
+                                    <segue destination="A6L-A4-pHi" kind="show" id="VyD-NA-34Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5">
+                                <rect key="frame" x="594" y="716" width="733" height="88"/>
+                                <color key="backgroundColor" red="0.3300528526" green="0.84071052069999996" blue="0.71913725139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="733" id="hLS-L8-oTn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="3 Jogadores"/>
+                                <connections>
+                                    <segue destination="A6L-A4-pHi" kind="show" id="tqI-B2-GEM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX">
+                                <rect key="frame" x="594" y="826" width="733" height="88"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="733" id="dir-Nc-xT2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="4 Jogadores"/>
+                                <connections>
+                                    <segue destination="A6L-A4-pHi" kind="show" id="WrT-KO-D88"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="E1c-EX-gpw" firstAttribute="top" secondItem="Lzh-my-ECr" secondAttribute="bottom" id="3JZ-Ds-kA8"/>
+                            <constraint firstItem="uot-Lb-ibN" firstAttribute="top" secondItem="SlH-1T-gty" secondAttribute="bottom" constant="22" id="4DV-Sq-sBb"/>
+                            <constraint firstItem="Rdd-Jb-OXy" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="8Jf-Lx-dai"/>
+                            <constraint firstItem="SlH-1T-gty" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="9sn-l4-IxZ"/>
+                            <constraint firstItem="MTc-r3-5zN" firstAttribute="top" secondItem="E1c-EX-gpw" secondAttribute="bottom" id="Bqb-3e-c32"/>
+                            <constraint firstItem="E1c-EX-gpw" firstAttribute="leading" secondItem="oRr-T7-AE3" secondAttribute="leadingMargin" constant="-20" id="FNb-BL-z53"/>
+                            <constraint firstItem="SlH-1T-gty" firstAttribute="top" secondItem="Rdd-Jb-OXy" secondAttribute="bottom" constant="236" id="ckK-Is-ObX"/>
+                            <constraint firstItem="ptU-9h-iaX" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="dpQ-Ce-aYB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E1c-EX-gpw" secondAttribute="trailing" constant="-20" id="eZ6-KC-VaT"/>
+                            <constraint firstItem="Rdd-Jb-OXy" firstAttribute="top" secondItem="Lzh-my-ECr" secondAttribute="bottom" constant="123" id="er1-oh-Nfv"/>
+                            <constraint firstItem="ptU-9h-iaX" firstAttribute="top" secondItem="w3h-jP-bK5" secondAttribute="bottom" constant="22" id="gtI-hE-YdK"/>
+                            <constraint firstItem="w3h-jP-bK5" firstAttribute="top" secondItem="uot-Lb-ibN" secondAttribute="bottom" constant="22" id="vis-fW-Aii"/>
+                            <constraint firstItem="uot-Lb-ibN" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="xFV-lr-iSp"/>
+                            <constraint firstItem="w3h-jP-bK5" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="xfc-4j-mqK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-cS-uMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3161" y="673"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IpW-bk-fCI">
+            <objects>
+                <viewController id="A6L-A4-pHi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U2v-IQ-4nQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ECX-l6-eFW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZrL-TM-Fkb">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-99-6zZ">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE">
+                                <rect key="frame" x="190" y="796" width="632" height="161"/>
+                                <color key="backgroundColor" red="0.99428457021713257" green="0.45579063892364502" blue="0.41197547316551208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Rio de Janeiro"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf">
+                                <rect key="frame" x="190" y="553" width="632" height="161"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Brasília"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo">
+                                <rect key="frame" x="1098" y="553" width="632" height="161"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="São Paulo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu">
+                                <rect key="frame" x="1098" y="796" width="632" height="161"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Buenos Aires"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qual é a capital do Brasil?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
+                                <rect key="frame" x="408" y="148" width="1105" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06j-hh-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5258" y="673"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cgm-co-pqf">
+            <objects>
+                <viewController id="ZJC-cf-7RM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lcl-ct-mUb"/>
+                        <viewControllerLayoutGuide type="bottom" id="85d-4d-xcR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wK2-Hz-GBu">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="Oo4-7c-Dpn">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONQUISTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ica-AD-MVi">
+                                <rect key="frame" x="504" y="71" width="913" height="180"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophies" translatesAutoresizingMaskIntoConstraints="NO" id="NZg-H6-dfu">
+                                <rect key="frame" x="344" y="376" width="1232" height="580"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbR-lb-EXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="2039"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundGameShow" width="1600" height="900"/>
+        <image name="trophies" width="1224" height="572"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VyD-NA-34Q"/>
+    </inferredMetricsTieBreakers>
+</document>
