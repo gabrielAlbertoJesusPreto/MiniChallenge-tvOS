@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CC2C1CE5FD8C004B859F /* CustomButton.swift */; };
 		5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */; };
 		5E098F2D1CE3592E00F939A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2C1CE3592E00F939A5 /* ViewController.swift */; };
 		5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1129CC2C1CE5FD8C004B859F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5E098F271CE3592E00F939A5 /* GameShowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameShowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E098F2C1CE3592E00F939A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */,
 				5E098F2C1CE3592E00F939A5 /* ViewController.swift */,
+				1129CC2C1CE5FD8C004B859F /* CustomButton.swift */,
 				5E098F311CE3592E00F939A5 /* Main.storyboard */,
 				5E098F341CE3592E00F939A5 /* Assets.xcassets */,
 				5E098F361CE3592E00F939A5 /* Info.plist */,
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
 				5E098F2D1CE3592E00F939A5 /* ViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
@@ -280,6 +284,7 @@
 				5E098F3B1CE3592E00F939A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

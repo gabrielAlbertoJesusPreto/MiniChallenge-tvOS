@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var trophiesButton: UIButton!
+    @IBOutlet weak var startButton: CustomButton!
+    @IBOutlet weak var trophiesButton: CustomButton!
+    
+    var focusGuide:UIFocusGuide!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        startButton.updateFocusIfNeeded()
+        startButton.setNeedsFocusUpdate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +28,6 @@ class ViewController: UIViewController {
     override var preferredFocusedView: UIView? {
         return startButton
     }
-
+    
 }
 

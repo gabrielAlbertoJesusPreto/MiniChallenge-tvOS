@@ -20,16 +20,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-60-lIW">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-lS-AkQ">
-                                <rect key="frame" x="699" y="692" width="523" height="86"/>
-                                <color key="backgroundColor" red="1" green="0.29537630081176758" blue="0.22452422976493835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Começar"/>
-                                <connections>
-                                    <segue destination="l0T-MW-uAK" kind="show" id="E6o-IG-qQQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTb-TY-G3s">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTb-TY-G3s" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="699" y="802" width="523" height="86"/>
                                 <color key="backgroundColor" red="1" green="0.6023905873298645" blue="0.03817952424287796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -47,6 +38,15 @@
                                 <color key="textColor" red="0.92263418436050415" green="0.93074637651443481" blue="0.94125837087631226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-lS-AkQ" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                                <rect key="frame" x="699" y="692" width="523" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.29537630081176758" blue="0.22452422976493835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Começar"/>
+                                <connections>
+                                    <segue destination="l0T-MW-uAK" kind="show" id="E6o-IG-qQQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.069872938096523285" green="0.16718575358390808" blue="0.24616783857345581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -55,6 +55,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="preferredFocusedView" destination="yzv-lS-AkQ" id="hF9-v2-MLH"/>
                         <outlet property="startButton" destination="yzv-lS-AkQ" id="0jJ-F5-wc9"/>
                     </connections>
                 </viewController>
@@ -83,7 +84,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlH-1T-gty">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlH-1T-gty" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="496" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.3321911096572876" green="0.70478278398513794" blue="0.85090041160583496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -96,7 +97,7 @@
                                     <segue destination="A6L-A4-pHi" kind="show" id="YEd-iL-NDi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="606" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.92203491926193237" green="0.40600723028182983" blue="0.46242129802703857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -109,7 +110,7 @@
                                     <segue destination="A6L-A4-pHi" kind="show" id="VyD-NA-34Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="716" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.3300528526" green="0.84071052069999996" blue="0.71913725139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -122,7 +123,7 @@
                                     <segue destination="A6L-A4-pHi" kind="show" id="tqI-B2-GEM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="826" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -173,25 +174,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-99-6zZ">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="796" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.99428457021713257" green="0.45579063892364502" blue="0.41197547316551208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Rio de Janeiro"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Brasília"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="São Paulo"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="796" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
