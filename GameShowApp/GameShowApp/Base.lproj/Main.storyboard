@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1045" y="673"/>
         </scene>
-        <!--View Controller-->
+        <!--Players View Controller-->
         <scene sceneID="Sv2-sL-2Wl">
             <objects>
-                <viewController id="l0T-MW-uAK" sceneMemberID="viewController">
+                <viewController id="l0T-MW-uAK" customClass="PlayersViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lzh-my-ECr"/>
                         <viewControllerLayoutGuide type="bottom" id="MTc-r3-5zN"/>
@@ -94,7 +94,8 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="1 Jogador"/>
                                 <connections>
-                                    <segue destination="A6L-A4-pHi" kind="show" id="YEd-iL-NDi"/>
+                                    <action selector="SinglePlayer:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="Jyf-MI-b0E"/>
+                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion" id="nLn-Ms-HAJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
@@ -107,7 +108,8 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="2 Jogadores"/>
                                 <connections>
-                                    <segue destination="A6L-A4-pHi" kind="show" id="VyD-NA-34Q"/>
+                                    <action selector="twoPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="soo-Ri-mpv"/>
+                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion3" id="qkg-81-fjN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
@@ -120,7 +122,8 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="3 Jogadores"/>
                                 <connections>
-                                    <segue destination="A6L-A4-pHi" kind="show" id="tqI-B2-GEM"/>
+                                    <action selector="threePlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="MOh-0f-HZJ"/>
+                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion2" id="Vdx-fz-38e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
@@ -133,7 +136,8 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="4 Jogadores"/>
                                 <connections>
-                                    <segue destination="A6L-A4-pHi" kind="show" id="WrT-KO-D88"/>
+                                    <action selector="fourPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="s9f-k9-yfP"/>
+                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion4" id="3Sr-Rz-cTR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,12 +161,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-cS-uMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3161" y="673"/>
+            <point key="canvasLocation" x="3169" y="673"/>
         </scene>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="IpW-bk-fCI">
             <objects>
-                <viewController id="A6L-A4-pHi" sceneMemberID="viewController">
+                <viewController id="A6L-A4-pHi" customClass="QuestionViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2v-IQ-4nQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ECX-l6-eFW"/>
@@ -176,36 +180,78 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="796" width="632" height="161"/>
-                                <color key="backgroundColor" red="0.99428457021713257" green="0.45579063892364502" blue="0.41197547316551208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.73725490196078436" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Rio de Janeiro"/>
+                                <connections>
+                                    <action selector="option2:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="2ex-NR-fAn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Brasília"/>
+                                <connections>
+                                    <action selector="option1:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="pr3-Nb-QeX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="São Paulo"/>
+                                <connections>
+                                    <action selector="option3:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="1ye-Bc-msh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="796" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Buenos Aires"/>
+                                <connections>
+                                    <action selector="option4:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="LLY-wj-1Gh"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qual é a capital do Brasil?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
-                                <rect key="frame" x="408" y="148" width="1105" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual é a capital do Brasil?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
+                                <rect key="frame" x="20" y="148" width="1880" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-ae-ePQ">
+                                <rect key="frame" x="0.0" y="10" width="1920" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="oT5-hO-WmS"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ib4-Tg-zwE">
+                                <rect key="frame" x="20" y="39" width="1880" height="10"/>
+                            </progressView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="148" id="86d-3M-4Hj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
+                            <constraint firstItem="Fnz-ae-ePQ" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leading" id="Ucj-qk-Cbh"/>
+                            <constraint firstItem="Ib4-Tg-zwE" firstAttribute="top" secondItem="Fnz-ae-ePQ" secondAttribute="bottom" constant="19" id="YIy-GR-Ii1"/>
+                            <constraint firstItem="Ib4-Tg-zwE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="e0u-I1-TZP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ib4-Tg-zwE" secondAttribute="trailing" id="gEq-Tl-des"/>
+                            <constraint firstAttribute="trailing" secondItem="Fnz-ae-ePQ" secondAttribute="trailing" id="kcF-Aw-ffa"/>
+                            <constraint firstItem="Fnz-ae-ePQ" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="10" id="u7N-o8-iUS"/>
+                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="xAt-It-lOS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonOption1" destination="5Js-Ha-2wf" id="7NT-R4-jB3"/>
+                        <outlet property="buttonOption2" destination="1DD-47-XZE" id="ZWM-jF-Te9"/>
+                        <outlet property="buttonOption3" destination="Q5u-Pu-vPo" id="HVX-sr-DIQ"/>
+                        <outlet property="buttonOption4" destination="ibC-Pl-iHu" id="NAn-Y5-ATe"/>
+                        <outlet property="constarintProgressBar" destination="kcF-Aw-ffa" id="xuQ-pl-o07"/>
+                        <outlet property="labelQuestion" destination="Pq8-DX-gGl" id="gUi-ka-vbk"/>
+                        <outlet property="progressBar" destination="Ib4-Tg-zwE" id="hhT-lU-Vy6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06j-hh-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,6 +294,6 @@
         <image name="trophies" width="1224" height="572"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VyD-NA-34Q"/>
+        <segue reference="3Sr-Rz-cTR"/>
     </inferredMetricsTieBreakers>
 </document>

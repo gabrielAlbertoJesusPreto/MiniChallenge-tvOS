@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11044FFE1CEB491200DBCE38 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11044FFD1CEB491200DBCE38 /* QuestionViewController.swift */; };
+		111CEA931CEB552600F6DA08 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CEA921CEB552600F6DA08 /* PlayersViewController.swift */; };
+		111CEA951CEB5CF800F6DA08 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CEA941CEB5CF800F6DA08 /* Answer.swift */; };
+		111CEA971CEB5D4D00F6DA08 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CEA961CEB5D4D00F6DA08 /* Question.swift */; };
 		1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CC2C1CE5FD8C004B859F /* CustomButton.swift */; };
+		1192EB9E1CE9FB1800A3C7BA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1192EB9D1CE9FB1800A3C7BA /* CloudKit.framework */; };
 		5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */; };
 		5E098F2D1CE3592E00F939A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2C1CE3592E00F939A5 /* ViewController.swift */; };
 		5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */; };
@@ -16,7 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11044FFD1CEB491200DBCE38 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		111CEA921CEB552600F6DA08 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		111CEA941CEB5CF800F6DA08 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		111CEA961CEB5D4D00F6DA08 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1129CC2C1CE5FD8C004B859F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1192EB9C1CE9FB1200A3C7BA /* GameShowApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GameShowApp.entitlements; sourceTree = "<group>"; };
+		1192EB9D1CE9FB1800A3C7BA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5E098F271CE3592E00F939A5 /* GameShowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameShowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E098F2C1CE3592E00F939A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1192EB9E1CE9FB1800A3C7BA /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +52,7 @@
 		5E098F1E1CE3592E00F939A5 = {
 			isa = PBXGroup;
 			children = (
+				1192EB9D1CE9FB1800A3C7BA /* CloudKit.framework */,
 				5E098F291CE3592E00F939A5 /* GameShowApp */,
 				5E098F281CE3592E00F939A5 /* Products */,
 			);
@@ -56,10 +69,15 @@
 		5E098F291CE3592E00F939A5 /* GameShowApp */ = {
 			isa = PBXGroup;
 			children = (
+				1192EB9C1CE9FB1200A3C7BA /* GameShowApp.entitlements */,
 				5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */,
 				5E098F2C1CE3592E00F939A5 /* ViewController.swift */,
 				1129CC2C1CE5FD8C004B859F /* CustomButton.swift */,
 				5E098F311CE3592E00F939A5 /* Main.storyboard */,
+				11044FFD1CEB491200DBCE38 /* QuestionViewController.swift */,
+				111CEA941CEB5CF800F6DA08 /* Answer.swift */,
+				111CEA961CEB5D4D00F6DA08 /* Question.swift */,
+				111CEA921CEB552600F6DA08 /* PlayersViewController.swift */,
 				5E098F341CE3592E00F939A5 /* Assets.xcassets */,
 				5E098F361CE3592E00F939A5 /* Info.plist */,
 				5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */,
@@ -99,6 +117,12 @@
 				TargetAttributes = {
 					5E098F261CE3592E00F939A5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4RLR8FUC4X;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -138,9 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */,
+				111CEA971CEB5D4D00F6DA08 /* Question.swift in Sources */,
+				11044FFE1CEB491200DBCE38 /* QuestionViewController.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
+				111CEA951CEB5CF800F6DA08 /* Answer.swift in Sources */,
 				5E098F2D1CE3592E00F939A5 /* ViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
+				111CEA931CEB552600F6DA08 /* PlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +274,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GameShowApp/GameShowApp.entitlements;
 				INFOPLIST_FILE = GameShowApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gabriel.GameShowApp;
@@ -258,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GameShowApp/GameShowApp.entitlements;
 				INFOPLIST_FILE = GameShowApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gabriel.GameShowApp;
