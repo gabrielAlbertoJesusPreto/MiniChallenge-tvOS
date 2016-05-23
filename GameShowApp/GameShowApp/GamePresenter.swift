@@ -1,5 +1,5 @@
 //
-//  SinglePlayerPresenter.swift
+//  GamePresenter.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -11,27 +11,27 @@
 
 import UIKit
 
-protocol SinglePlayerPresenterInput
+protocol GamePresenterInput
 {
-  func presentSomething(response: SinglePlayerResponse)
+  func presentSomething(response: GameResponse)
 }
 
-protocol SinglePlayerPresenterOutput: class
+protocol GamePresenterOutput: class
 {
-  func displaySomething(viewModel: SinglePlayerViewModel)
+  func displaySomething(viewModel: GameViewModel)
 }
 
-class SinglePlayerPresenter: SinglePlayerPresenterInput
+class GamePresenter: GamePresenterInput
 {
-  weak var output: SinglePlayerPresenterOutput!
+  weak var output: GamePresenterOutput!
   
   // MARK: Presentation logic
   
-  func presentSomething(response: SinglePlayerResponse)
+  func presentSomething(response: GameResponse)
   {
     // NOTE: Format the response from the Interactor and pass the result back to the View Controller
     
-    let viewModel = SinglePlayerViewModel()
+    let viewModel = GameViewModel()
     output.displaySomething(viewModel)
   }
 }

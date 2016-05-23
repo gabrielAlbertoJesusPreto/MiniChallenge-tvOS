@@ -1,5 +1,5 @@
 //
-//  SinglePlayerConfigurator.swift
+//  GameConfigurator.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -13,7 +13,7 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension SinglePlayerViewController: SinglePlayerPresenterOutput
+extension GameViewController: GamePresenterOutput
 {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
   {
@@ -21,27 +21,27 @@ extension SinglePlayerViewController: SinglePlayerPresenterOutput
   }
 }
 
-extension SinglePlayerInteractor: SinglePlayerViewControllerOutput
+extension GameInteractor: GameViewControllerOutput
 {
 }
 
-extension SinglePlayerPresenter: SinglePlayerInteractorOutput
+extension GamePresenter: GameInteractorOutput
 {
 }
 
-class SinglePlayerConfigurator
+class GameConfigurator
 {
   // MARK: Object lifecycle
   
-  class var sharedInstance: SinglePlayerConfigurator
+  class var sharedInstance: GameConfigurator
   {
     struct Static {
-      static var instance: SinglePlayerConfigurator?
+      static var instance: GameConfigurator?
       static var token: dispatch_once_t = 0
     }
     
     dispatch_once(&Static.token) {
-      Static.instance = SinglePlayerConfigurator()
+      Static.instance = GameConfigurator()
     }
     
     return Static.instance!
@@ -49,15 +49,15 @@ class SinglePlayerConfigurator
   
   // MARK: Configuration
   
-  func configure(viewController: SinglePlayerViewController)
+  func configure(viewController: GameViewController)
   {
-    let router = SinglePlayerRouter()
+    let router = GameRouter()
     router.viewController = viewController
     
-    let presenter = SinglePlayerPresenter()
+    let presenter = GamePresenter()
     presenter.output = viewController
     
-    let interactor = SinglePlayerInteractor()
+    let interactor = GameInteractor()
     interactor.output = presenter
     
     viewController.output = interactor

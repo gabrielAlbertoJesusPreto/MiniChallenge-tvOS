@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CC2C1CE5FD8C004B859F /* CustomButton.swift */; };
-		11473ACF1CF32CF000842975 /* SinglePlayerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AC81CF32CF000842975 /* SinglePlayerConfigurator.swift */; };
-		11473AD01CF32CF000842975 /* SinglePlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AC91CF32CF000842975 /* SinglePlayerInteractor.swift */; };
-		11473AD11CF32CF000842975 /* SinglePlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ACA1CF32CF000842975 /* SinglePlayerModels.swift */; };
-		11473AD21CF32CF000842975 /* SinglePlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ACB1CF32CF000842975 /* SinglePlayerPresenter.swift */; };
-		11473AD31CF32CF000842975 /* SinglePlayerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ACC1CF32CF000842975 /* SinglePlayerRouter.swift */; };
-		11473AD41CF32CF000842975 /* SinglePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ACD1CF32CF000842975 /* SinglePlayerViewController.swift */; };
-		11473AD51CF32CF000842975 /* SinglePlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ACE1CF32CF000842975 /* SinglePlayerWorker.swift */; };
+		113A01AB1CF3361A00D61B0D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A71CF3361900D61B0D /* Player.swift */; };
+		113A01AC1CF3361A00D61B0D /* PlayerManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A81CF3361900D61B0D /* PlayerManaged.swift */; };
+		113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A91CF3361A00D61B0D /* Trophy.swift */; };
+		113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */; };
+		113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B11CF3381F00D61B0D /* GameConfigurator.swift */; };
+		113A01B91CF3381F00D61B0D /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B21CF3381F00D61B0D /* GameInteractor.swift */; };
+		113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B31CF3381F00D61B0D /* GameModels.swift */; };
+		113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B41CF3381F00D61B0D /* GamePresenter.swift */; };
+		113A01BC1CF3381F00D61B0D /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B51CF3381F00D61B0D /* GameRouter.swift */; };
+		113A01BD1CF3381F00D61B0D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B61CF3381F00D61B0D /* GameViewController.swift */; };
+		113A01BE1CF3381F00D61B0D /* GameWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B71CF3381F00D61B0D /* GameWorker.swift */; };
 		11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */; };
 		11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD91CF32E3700842975 /* TrophyViewController.swift */; };
 		11473ADC1CF32E5800842975 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ADB1CF32E5800842975 /* ModelManager.swift */; };
@@ -28,13 +32,17 @@
 
 /* Begin PBXFileReference section */
 		1129CC2C1CE5FD8C004B859F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		11473AC81CF32CF000842975 /* SinglePlayerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerConfigurator.swift; sourceTree = "<group>"; };
-		11473AC91CF32CF000842975 /* SinglePlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerInteractor.swift; sourceTree = "<group>"; };
-		11473ACA1CF32CF000842975 /* SinglePlayerModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerModels.swift; sourceTree = "<group>"; };
-		11473ACB1CF32CF000842975 /* SinglePlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerPresenter.swift; sourceTree = "<group>"; };
-		11473ACC1CF32CF000842975 /* SinglePlayerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerRouter.swift; sourceTree = "<group>"; };
-		11473ACD1CF32CF000842975 /* SinglePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerViewController.swift; sourceTree = "<group>"; };
-		11473ACE1CF32CF000842975 /* SinglePlayerWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerWorker.swift; sourceTree = "<group>"; };
+		113A01A71CF3361900D61B0D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
+		113A01A81CF3361900D61B0D /* PlayerManaged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerManaged.swift; path = ../PlayerManaged.swift; sourceTree = "<group>"; };
+		113A01A91CF3361A00D61B0D /* Trophy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trophy.swift; path = ../Trophy.swift; sourceTree = "<group>"; };
+		113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrophyManaged.swift; path = ../TrophyManaged.swift; sourceTree = "<group>"; };
+		113A01B11CF3381F00D61B0D /* GameConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigurator.swift; sourceTree = "<group>"; };
+		113A01B21CF3381F00D61B0D /* GameInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
+		113A01B31CF3381F00D61B0D /* GameModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		113A01B41CF3381F00D61B0D /* GamePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		113A01B51CF3381F00D61B0D /* GameRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		113A01B61CF3381F00D61B0D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		113A01B71CF3381F00D61B0D /* GameWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWorker.swift; sourceTree = "<group>"; };
 		11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		11473AD91CF32E3700842975 /* TrophyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
 		11473ADB1CF32E5800842975 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
@@ -69,18 +77,29 @@
 			name = ModelManager;
 			sourceTree = "<group>";
 		};
-		11473AD61CF32CF400842975 /* SinglePlayer */ = {
+		113A01AF1CF3365A00D61B0D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				11473AC81CF32CF000842975 /* SinglePlayerConfigurator.swift */,
-				11473AC91CF32CF000842975 /* SinglePlayerInteractor.swift */,
-				11473ACA1CF32CF000842975 /* SinglePlayerModels.swift */,
-				11473ACB1CF32CF000842975 /* SinglePlayerPresenter.swift */,
-				11473ACC1CF32CF000842975 /* SinglePlayerRouter.swift */,
-				11473ACD1CF32CF000842975 /* SinglePlayerViewController.swift */,
-				11473ACE1CF32CF000842975 /* SinglePlayerWorker.swift */,
+				113A01A71CF3361900D61B0D /* Player.swift */,
+				113A01A81CF3361900D61B0D /* PlayerManaged.swift */,
+				113A01A91CF3361A00D61B0D /* Trophy.swift */,
+				113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */,
 			);
-			name = SinglePlayer;
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		11473AD61CF32CF400842975 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				113A01B11CF3381F00D61B0D /* GameConfigurator.swift */,
+				113A01B21CF3381F00D61B0D /* GameInteractor.swift */,
+				113A01B31CF3381F00D61B0D /* GameModels.swift */,
+				113A01B41CF3381F00D61B0D /* GamePresenter.swift */,
+				113A01B51CF3381F00D61B0D /* GameRouter.swift */,
+				113A01B61CF3381F00D61B0D /* GameViewController.swift */,
+				113A01B71CF3381F00D61B0D /* GameWorker.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 		5E098F1E1CE3592E00F939A5 = {
@@ -103,8 +122,9 @@
 		5E098F291CE3592E00F939A5 /* GameShowApp */ = {
 			isa = PBXGroup;
 			children = (
+				113A01AF1CF3365A00D61B0D /* CoreData */,
 				113A01A61CF3309200D61B0D /* ModelManager */,
-				11473AD61CF32CF400842975 /* SinglePlayer */,
+				11473AD61CF32CF400842975 /* Game */,
 				1192EB9C1CE9FB1200A3C7BA /* GameShowApp.entitlements */,
 				5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */,
 				5E098F2C1CE3592E00F939A5 /* MainViewController.swift */,
@@ -195,20 +215,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11473AD41CF32CF000842975 /* SinglePlayerViewController.swift in Sources */,
 				1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */,
-				11473AD01CF32CF000842975 /* SinglePlayerInteractor.swift in Sources */,
+				113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */,
+				113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */,
+				113A01B91CF3381F00D61B0D /* GameInteractor.swift in Sources */,
 				11473ADC1CF32E5800842975 /* ModelManager.swift in Sources */,
-				11473ACF1CF32CF000842975 /* SinglePlayerConfigurator.swift in Sources */,
+				113A01AC1CF3361A00D61B0D /* PlayerManaged.swift in Sources */,
+				113A01BD1CF3381F00D61B0D /* GameViewController.swift in Sources */,
+				113A01BC1CF3381F00D61B0D /* GameRouter.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
+				113A01BE1CF3381F00D61B0D /* GameWorker.swift in Sources */,
 				5E098F2D1CE3592E00F939A5 /* MainViewController.swift in Sources */,
+				113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */,
 				11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
-				11473AD51CF32CF000842975 /* SinglePlayerWorker.swift in Sources */,
-				11473AD21CF32CF000842975 /* SinglePlayerPresenter.swift in Sources */,
+				113A01AB1CF3361A00D61B0D /* Player.swift in Sources */,
+				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
-				11473AD11CF32CF000842975 /* SinglePlayerModels.swift in Sources */,
-				11473AD31CF32CF000842975 /* SinglePlayerRouter.swift in Sources */,
+				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

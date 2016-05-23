@@ -1,5 +1,5 @@
 //
-//  SinglePlayerModels.swift
+//  GameWorker.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -11,14 +11,12 @@
 
 import UIKit
 
-struct SinglePlayerRequest
+class GameWorker
 {
-}
-
-struct SinglePlayerResponse
-{
-}
-
-struct SinglePlayerViewModel
-{
+  // MARK: Business Logic
+  
+  func doSomeWork()
+  {
+    // NOTE: Do the work
+  }
 }

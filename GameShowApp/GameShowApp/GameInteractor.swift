@@ -1,5 +1,5 @@
 //
-//  SinglePlayerInteractor.swift
+//  GameInteractor.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -11,33 +11,33 @@
 
 import UIKit
 
-protocol SinglePlayerInteractorInput
+protocol GameInteractorInput
 {
-  func doSomething(request: SinglePlayerRequest)
+  func doSomething(request: GameRequest)
 }
 
-protocol SinglePlayerInteractorOutput
+protocol GameInteractorOutput
 {
-  func presentSomething(response: SinglePlayerResponse)
+  func presentSomething(response: GameResponse)
 }
 
-class SinglePlayerInteractor: SinglePlayerInteractorInput
+class GameInteractor: GameInteractorInput
 {
-  var output: SinglePlayerInteractorOutput!
-  var worker: SinglePlayerWorker!
+  var output: GameInteractorOutput!
+  var worker: GameWorker!
   
   // MARK: Business logic
   
-  func doSomething(request: SinglePlayerRequest)
+  func doSomething(request: GameRequest)
   {
     // NOTE: Create some Worker to do the work
     
-    worker = SinglePlayerWorker()
+    worker = GameWorker()
     worker.doSomeWork()
     
     // NOTE: Pass the result to the Presenter
     
-    let response = SinglePlayerResponse()
+    let response = GameResponse()
     output.presentSomething(response)
   }
 }

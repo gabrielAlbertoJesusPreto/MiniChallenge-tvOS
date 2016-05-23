@@ -1,5 +1,5 @@
 //
-//  SinglePlayerRouter.swift
+//  GameRouter.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -11,14 +11,14 @@
 
 import UIKit
 
-protocol SinglePlayerRouterInput
+protocol GameRouterInput
 {
   func navigateToSomewhere()
 }
 
-class SinglePlayerRouter: SinglePlayerRouterInput
+class GameRouter: GameRouterInput
 {
-  weak var viewController: SinglePlayerViewController!
+  weak var viewController: GameViewController!
   
   // MARK: Navigation
   

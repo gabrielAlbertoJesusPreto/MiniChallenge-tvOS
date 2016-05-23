@@ -1,5 +1,5 @@
 //
-//  SinglePlayerViewController.swift
+//  GameViewController.swift
 //  GameShowApp
 //
 //  Created by Liliane Bezerra Lima on 23/05/16.
@@ -11,27 +11,27 @@
 
 import UIKit
 
-protocol SinglePlayerViewControllerInput
+protocol GameViewControllerInput
 {
-  func displaySomething(viewModel: SinglePlayerViewModel)
+  func displaySomething(viewModel: GameViewModel)
 }
 
-protocol SinglePlayerViewControllerOutput
+protocol GameViewControllerOutput
 {
-  func doSomething(request: SinglePlayerRequest)
+  func doSomething(request: GameRequest)
 }
 
-class SinglePlayerViewController: UIViewController, SinglePlayerViewControllerInput
+class GameViewController: UIViewController, GameViewControllerInput
 {
-  var output: SinglePlayerViewControllerOutput!
-  var router: SinglePlayerRouter!
+  var output: GameViewControllerOutput!
+  var router: GameRouter!
   
   // MARK: Object lifecycle
   
   override func awakeFromNib()
   {
     super.awakeFromNib()
-    SinglePlayerConfigurator.sharedInstance.configure(self)
+    GameConfigurator.sharedInstance.configure(self)
   }
   
   // MARK: View lifecycle
@@ -48,13 +48,13 @@ class SinglePlayerViewController: UIViewController, SinglePlayerViewControllerIn
   {
     // NOTE: Ask the Interactor to do some work
     
-    let request = SinglePlayerRequest()
+    let request = GameRequest()
     output.doSomething(request)
   }
   
   // MARK: Display logic
   
-  func displaySomething(viewModel: SinglePlayerViewModel)
+  func displaySomething(viewModel: GameViewModel)
   {
     // NOTE: Display the result from the Presenter
     
