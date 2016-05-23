@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1045" y="673"/>
         </scene>
-        <!--Players View Controller-->
+        <!--Select Player View Controller-->
         <scene sceneID="Sv2-sL-2Wl">
             <objects>
-                <viewController id="l0T-MW-uAK" customClass="PlayersViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l0T-MW-uAK" customClass="SelectPlayerViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lzh-my-ECr"/>
                         <viewControllerLayoutGuide type="bottom" id="MTc-r3-5zN"/>
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="3169" y="673"/>
         </scene>
-        <!--Question View Controller-->
+        <!--View Controller-->
         <scene sceneID="IpW-bk-fCI">
             <objects>
-                <viewController id="A6L-A4-pHi" customClass="QuestionViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A6L-A4-pHi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2v-IQ-4nQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ECX-l6-eFW"/>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="5258" y="673"/>
         </scene>
-        <!--View Controller-->
+        <!--Trophy View Controller-->
         <scene sceneID="cgm-co-pqf">
             <objects>
-                <viewController id="ZJC-cf-7RM" sceneMemberID="viewController">
+                <viewController id="ZJC-cf-7RM" customClass="TrophyViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lcl-ct-mUb"/>
                         <viewControllerLayoutGuide type="bottom" id="85d-4d-xcR"/>
