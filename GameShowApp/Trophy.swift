@@ -18,6 +18,5 @@ extension Trophy {
     @NSManaged var score: NSNumber?
     @NSManaged var trophyDescription: String?
     @NSManaged var type: NSNumber?
-    @NSManaged var newRelationship: Player?
 
 }

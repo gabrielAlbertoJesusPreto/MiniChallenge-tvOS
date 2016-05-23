@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Player" representedClassName=".Player" syncable="YES">
-        <attribute name="maxScore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trophy" inverseName="newRelationship" inverseEntity="Trophy" syncable="YES"/>
-    </entity>
     <entity name="Trophy" representedClassName=".Trophy" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="trophyDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="newRelationship" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Player" positionX="-191" positionY="-90" width="128" height="73"/>
-        <element name="Trophy" positionX="144" positionY="-90" width="128" height="118"/>
+        <element name="Trophy" positionX="144" positionY="-90" width="128" height="103"/>
     </elements>
 </model>

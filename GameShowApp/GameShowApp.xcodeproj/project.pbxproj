@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CC2C1CE5FD8C004B859F /* CustomButton.swift */; };
-		113A01AB1CF3361A00D61B0D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A71CF3361900D61B0D /* Player.swift */; };
-		113A01AC1CF3361A00D61B0D /* PlayerManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A81CF3361900D61B0D /* PlayerManaged.swift */; };
 		113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A91CF3361A00D61B0D /* Trophy.swift */; };
 		113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */; };
 		113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B11CF3381F00D61B0D /* GameConfigurator.swift */; };
@@ -32,8 +30,6 @@
 
 /* Begin PBXFileReference section */
 		1129CC2C1CE5FD8C004B859F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		113A01A71CF3361900D61B0D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
-		113A01A81CF3361900D61B0D /* PlayerManaged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerManaged.swift; path = ../PlayerManaged.swift; sourceTree = "<group>"; };
 		113A01A91CF3361A00D61B0D /* Trophy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trophy.swift; path = ../Trophy.swift; sourceTree = "<group>"; };
 		113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrophyManaged.swift; path = ../TrophyManaged.swift; sourceTree = "<group>"; };
 		113A01B11CF3381F00D61B0D /* GameConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigurator.swift; sourceTree = "<group>"; };
@@ -80,8 +76,7 @@
 		113A01AF1CF3365A00D61B0D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				113A01A71CF3361900D61B0D /* Player.swift */,
-				113A01A81CF3361900D61B0D /* PlayerManaged.swift */,
+				5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */,
 				113A01A91CF3361A00D61B0D /* Trophy.swift */,
 				113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */,
 			);
@@ -134,7 +129,6 @@
 				11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */,
 				5E098F341CE3592E00F939A5 /* Assets.xcassets */,
 				5E098F361CE3592E00F939A5 /* Info.plist */,
-				5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */,
 			);
 			path = GameShowApp;
 			sourceTree = "<group>";
@@ -220,7 +214,6 @@
 				113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */,
 				113A01B91CF3381F00D61B0D /* GameInteractor.swift in Sources */,
 				11473ADC1CF32E5800842975 /* ModelManager.swift in Sources */,
-				113A01AC1CF3361A00D61B0D /* PlayerManaged.swift in Sources */,
 				113A01BD1CF3381F00D61B0D /* GameViewController.swift in Sources */,
 				113A01BC1CF3381F00D61B0D /* GameRouter.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
@@ -229,7 +222,6 @@
 				113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */,
 				11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
-				113A01AB1CF3361A00D61B0D /* Player.swift in Sources */,
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
