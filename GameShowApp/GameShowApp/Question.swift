@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CloudKit
 
 class Question: NSObject {
-    var phrase:     String?
-    var answers:    [Answer]?
-    var level:      Int?
+    var phrase:         String?
+    var answers:        [Answer]?
+    var level:          Int?
+    var resultsAnswers: [CKReference]?
 }

@@ -19,6 +19,7 @@
 		113A01BE1CF3381F00D61B0D /* GameWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01B71CF3381F00D61B0D /* GameWorker.swift */; };
 		113A01C01CF3460A00D61B0D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01BF1CF3460A00D61B0D /* Question.swift */; };
 		113A01C21CF3461A00D61B0D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01C11CF3461A00D61B0D /* Answer.swift */; };
+		113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBB091CF49BA900E75280 /* GameScoreWorker.swift */; };
 		11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */; };
 		11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD91CF32E3700842975 /* TrophyViewController.swift */; };
 		11473ADC1CF32E5800842975 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ADB1CF32E5800842975 /* ModelManager.swift */; };
@@ -43,6 +44,7 @@
 		113A01B71CF3381F00D61B0D /* GameWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWorker.swift; sourceTree = "<group>"; };
 		113A01BF1CF3460A00D61B0D /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		113A01C11CF3461A00D61B0D /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		113BBB091CF49BA900E75280 /* GameScoreWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScoreWorker.swift; sourceTree = "<group>"; };
 		11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		11473AD91CF32E3700842975 /* TrophyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
 		11473ADB1CF32E5800842975 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				113A01B51CF3381F00D61B0D /* GameRouter.swift */,
 				113A01B61CF3381F00D61B0D /* GameViewController.swift */,
 				113A01B71CF3381F00D61B0D /* GameWorker.swift */,
+				113BBB091CF49BA900E75280 /* GameScoreWorker.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
+				113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */,
 				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);

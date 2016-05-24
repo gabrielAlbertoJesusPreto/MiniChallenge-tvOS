@@ -13,12 +13,14 @@ import UIKit
 
 protocol GamePresenterInput
 {
-  func presentSomething(response: GameResponse)
+    func presentSomething(response: GameResponse)
+    func presentScore(response: GameScoreResponse)
 }
 
 protocol GamePresenterOutput: class
 {
   func displaySomething(viewModel: GameViewModel)
+    func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
 class GamePresenter: GamePresenterInput
@@ -27,11 +29,30 @@ class GamePresenter: GamePresenterInput
   
   // MARK: Presentation logic
   
-  func presentSomething(response: GameResponse)
-  {
+  func presentSomething(response: GameResponse) {
     // NOTE: Format the response from the Interactor and pass the result back to the View Controller
     
-    let viewModel = GameViewModel()
+    var viewModel = GameViewModel()
+    var i = 0
+    viewModel.phraseQuestion = response.question!.phrase
+    viewModel.level = response.question?.level
+    var answers = [String]()
+    for item in (response.question?.answers)! {
+        answers.append(item.phrase!)
+        if item.isCorrect == 1 {
+            viewModel.correctPosition = i
+        }
+        i += 1
+    }
+    viewModel.answers = answers
     output.displaySomething(viewModel)
   }
+    
+    func presentScore(response: GameScoreResponse) {
+        let textAlert = "Parabéns você acertou e ganhou \(response.score) pontos"
+        var viewModel = GameScoreViewModel()
+        viewModel.textAlert = textAlert
+        viewModel.title = "Você acertou"
+        output.displayAlertScore(viewModel)
+    }
 }

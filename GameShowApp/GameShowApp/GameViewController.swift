@@ -11,20 +11,29 @@
 
 import UIKit
 
-protocol GameViewControllerInput
-{
-  func displaySomething(viewModel: GameViewModel)
+protocol GameViewControllerInput {
+    func displaySomething(viewModel: GameViewModel)
+    func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
 protocol GameViewControllerOutput
 {
-  func doSomething(request: GameRequest)
+    func doSomething()
+    func selectAnswer(request: GameScoreRequest)
 }
 
 class GameViewController: UIViewController, GameViewControllerInput
 {
-  var output: GameViewControllerOutput!
-  var router: GameRouter!
+    @IBOutlet weak var phraseQuestionLabel: UILabel!
+    @IBOutlet weak var answer0Button: CustomButton!
+    @IBOutlet weak var answer1Button: CustomButton!
+    @IBOutlet weak var answer2Button: CustomButton!
+    @IBOutlet weak var answer3Button: CustomButton!
+    
+    var output: GameViewControllerOutput!
+    var router: GameRouter!
+    var correctPosition = 0
+    var level = 0
   
   // MARK: Object lifecycle
   
@@ -48,16 +57,54 @@ class GameViewController: UIViewController, GameViewControllerInput
   {
     // NOTE: Ask the Interactor to do some work
     
-    let request = GameRequest()
-    output.doSomething(request)
+    output.doSomething()
   }
+    
+    func selectAnswer() {
+        var request = GameScoreRequest()
+        request.level = level
+        output.selectAnswer(request)
+    }
   
   // MARK: Display logic
   
-  func displaySomething(viewModel: GameViewModel)
-  {
-    // NOTE: Display the result from the Presenter
+  func displaySomething(viewModel: GameViewModel) {
+    dispatch_async(dispatch_get_main_queue()) {
+        self.phraseQuestionLabel.text = viewModel.phraseQuestion
+        self.level = viewModel.level!
+        self.correctPosition = viewModel.correctPosition!
+        self.answer0Button.setTitle(viewModel.answers![0], forState: UIControlState.Normal)
+        self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
+        self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
+        self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
+    }
+     }
     
-    // nameTextField.text = viewModel.name
-  }
+    func displayAlertScore(viewModel: GameScoreViewModel) {
+        func alertErroEmail(){
+            let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+
+    func verifyCorrectAnswer(tag:Int,button:UIButton) {
+        if tag == correctPosition {
+            button.backgroundColor = UIColor.greenColor()
+            self.selectAnswer()
+        } else {
+            button.backgroundColor = UIColor.redColor()
+        }
+        
+    }
+    @IBAction func answerButton(sender: AnyObject) {
+        let button = sender as? UIButton
+        self.verifyCorrectAnswer(sender.tag, button: button!)
+    }
+    
+
+    
+    
 }
