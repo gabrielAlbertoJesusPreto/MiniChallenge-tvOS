@@ -14,7 +14,6 @@ import CoreData
 
 extension Trophy {
 
-    @NSManaged var name: String?
     @NSManaged var score: NSNumber?
     @NSManaged var trophyDescription: String?
     @NSManaged var type: NSNumber?

@@ -13,31 +13,39 @@ import UIKit
 
 protocol GameInteractorInput
 {
-  func doSomething(request: GameRequest)
+  func doSomething()
+  func selectAnswer(request: GameScoreRequest)
 }
 
 protocol GameInteractorOutput
 {
   func presentSomething(response: GameResponse)
+  func presentScore(response: GameScoreResponse)
 }
 
 class GameInteractor: GameInteractorInput
 {
-  var output: GameInteractorOutput!
-  var worker: GameWorker!
+    var output: GameInteractorOutput!
+    var worker: GameWorker!
+    var workerScore:GameScoreWorker!
+    
   
   // MARK: Business logic
   
-  func doSomething(request: GameRequest)
-  {
-    // NOTE: Create some Worker to do the work
-    
+  func doSomething() {
     worker = GameWorker()
-    worker.doSomeWork()
-    
-    // NOTE: Pass the result to the Presenter
-    
-    let response = GameResponse()
-    output.presentSomething(response)
+    worker.getAnswerWork { (question) in
+        var response = GameResponse()
+        response.question = question
+        self.output.presentSomething(response)
+    }
   }
+    
+    func selectAnswer(request: GameScoreRequest) {
+        workerScore = GameScoreWorker()
+        let score = workerScore.calculateScore(request.level!)
+        var response = GameScoreResponse()
+        response.score = score
+        output.presentScore(response)
+    }
 }

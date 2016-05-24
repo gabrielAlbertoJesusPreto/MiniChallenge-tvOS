@@ -11,14 +11,27 @@
 
 import UIKit
 
-struct GameRequest
-{
+
+struct GameResponse {
+    var question:Question?
 }
 
-struct GameResponse
-{
+struct GameViewModel {
+    var answers:[String]?
+    var correctPosition:Int?
+    var phraseQuestion:String?
+    var level:Int?
 }
 
-struct GameViewModel
-{
+struct GameScoreRequest {
+    var level:Int?
+}
+
+struct GameScoreResponse {
+    var score:Int?
+}
+
+struct GameScoreViewModel {
+    var textAlert:String?
+    var title:String?
 }

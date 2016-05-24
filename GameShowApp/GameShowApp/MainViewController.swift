@@ -15,14 +15,14 @@ class MainViewController: UIViewController {
     
     var focusGuide:UIFocusGuide!
     
-    let dbManager = ModelManager.sharedInstance
+    //let dbManager = ModelManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.updateFocusIfNeeded()
         startButton.setNeedsFocusUpdate()
         
-        dbManager.getQuestions()
+        //dbManager.getQuestions()
     }
 
     override func didReceiveMemoryWarning() {
