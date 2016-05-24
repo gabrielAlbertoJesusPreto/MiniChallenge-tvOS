@@ -11,53 +11,48 @@
 
 import UIKit
 
-protocol GameViewControllerInput
-{
-  func displaySomething(viewModel: GameViewModel)
+protocol GameViewControllerInput {
+    func displaySomething(viewModel: GameViewModel)
 }
 
-protocol GameViewControllerOutput
-{
-  func doSomething(request: GameRequest)
+protocol GameViewControllerOutput {
+    func doSomething(request: GameRequest)
 }
 
-class GameViewController: UIViewController, GameViewControllerInput
-{
-  var output: GameViewControllerOutput!
-  var router: GameRouter!
-  
-  // MARK: Object lifecycle
-  
-  override func awakeFromNib()
-  {
-    super.awakeFromNib()
-    GameConfigurator.sharedInstance.configure(self)
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomethingOnLoad()
-  }
-  
-  // MARK: Event handling
-  
-  func doSomethingOnLoad()
-  {
-    // NOTE: Ask the Interactor to do some work
+class GameViewController: UIViewController, GameViewControllerInput {
+    var output: GameViewControllerOutput!
+    var router: GameRouter!
     
-    let request = GameRequest()
-    output.doSomething(request)
-  }
-  
-  // MARK: Display logic
-  
-  func displaySomething(viewModel: GameViewModel)
-  {
-    // NOTE: Display the result from the Presenter
+    var players: [(String, Int)]?
     
-    // nameTextField.text = viewModel.name
-  }
+    // MARK: Object lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        GameConfigurator.sharedInstance.configure(self)
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        doSomethingOnLoad()
+    }
+    
+    // MARK: Event handling
+    
+    func doSomethingOnLoad() {
+        // NOTE: Ask the Interactor to do some work
+        
+        let request = GameRequest()
+        output.doSomething(request)
+    }
+    
+    // MARK: Display logic
+    
+    func displaySomething(viewModel: GameViewModel) {
+        // NOTE: Display the result from the Presenter
+        
+        // nameTextField.text = viewModel.name
+    }
 }
