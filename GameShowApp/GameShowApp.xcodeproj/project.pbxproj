@@ -29,6 +29,7 @@
 		5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */; };
 		5E098F331CE3592E00F939A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F311CE3592E00F939A5 /* Main.storyboard */; };
 		5E098F351CE3592E00F939A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F341CE3592E00F939A5 /* Assets.xcassets */; };
+		5ED20DF51CF484B600A77BE3 /* TrophyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		5E098F321CE3592E00F939A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E098F341CE3592E00F939A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E098F361CE3592E00F939A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */,
 				113A01A91CF3361A00D61B0D /* Trophy.swift */,
 				113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */,
+				5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */,
 				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
+				5ED20DF51CF484B600A77BE3 /* TrophyManager.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +278,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -319,6 +324,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -343,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GameShowApp/GameShowApp.entitlements;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = GameShowApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gabriel.GameShowApp;
@@ -356,6 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GameShowApp/GameShowApp.entitlements;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = GameShowApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gabriel.GameShowApp;
