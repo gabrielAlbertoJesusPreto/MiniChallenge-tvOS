@@ -11,53 +11,84 @@
 
 import UIKit
 
-protocol GameViewControllerInput
-{
-  func displaySomething(viewModel: GameViewModel)
+protocol GameViewControllerInput {
+    func displaySomething(viewModel: GameViewModel)
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy)
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy)
 }
 
-protocol GameViewControllerOutput
-{
-  func doSomething(request: GameRequest)
+protocol GameViewControllerOutput {
+    func doSomething(request: GameRequest)
+    func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
 }
 
-class GameViewController: UIViewController, GameViewControllerInput
-{
+class GameViewController: UIViewController, GameViewControllerInput {
   var output: GameViewControllerOutput!
   var router: GameRouter!
+    
+    // Global Score
+    var score: Int?
   
   // MARK: Object lifecycle
   
-  override func awakeFromNib()
-  {
+  override func awakeFromNib() {
     super.awakeFromNib()
     GameConfigurator.sharedInstance.configure(self)
   }
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
     doSomethingOnLoad()
+    
+    
+    
+    // Remove This - Test
+    score = 2000
+    scoreDidChange()
+    
   }
   
   // MARK: Event handling
   
-  func doSomethingOnLoad()
-  {
+  func doSomethingOnLoad() {
     // NOTE: Ask the Interactor to do some work
     
     let request = GameRequest()
     output.doSomething(request)
   }
+    
+    
+    func scoreDidChange() {
+        var request = GameRequest.VerifyNewTRophy()
+        request.score = self.score
+        print("Loading...")
+        output.doVerificationNewTrophy(request)
+    }
   
   // MARK: Display logic
   
-  func displaySomething(viewModel: GameViewModel)
-  {
+  func displaySomething(viewModel: GameViewModel) {
     // NOTE: Display the result from the Presenter
     
     // nameTextField.text = viewModel.name
   }
+    
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
+        
+        print("Pronto!!!! - Novo Troféu")
+        
+        for item in viewModel.trophies! {
+            let alertController = UIAlertController(title: "Parabéns", message: "Você ganhou o troféu de \(item.score)", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK, Entendi", style: .Default, handler: nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true
+                , completion: nil)
+        }
+    }
+    
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy) {
+        print("Pronto!!!! - Nenhum Troféu")
+    }
 }

@@ -11,14 +11,26 @@
 
 import UIKit
 
-struct GameRequest
-{
+struct GameRequest {
+    struct VerifyNewTRophy {
+        var score: Int?
+    }
 }
 
-struct GameResponse
-{
+struct GameResponse {
+    struct NewTrophy {
+        var trophies: [TrophyEntity]?
+    }
+    struct NoNewTrophy {
+        var result = true
+    }
 }
 
-struct GameViewModel
-{
+struct GameViewModel {
+    struct NewTrophy {
+        var trophies: [TrophyEntity]?
+    }
+    struct NoNewTrophy {
+        var result = true
+    }
 }

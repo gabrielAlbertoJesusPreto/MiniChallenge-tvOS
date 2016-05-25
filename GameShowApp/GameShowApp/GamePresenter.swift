@@ -11,27 +11,43 @@
 
 import UIKit
 
-protocol GamePresenterInput
-{
-  func presentSomething(response: GameResponse)
+protocol GamePresenterInput {
+    func presentSomething(response: GameResponse)
+    func presentNewTrophy(response: GameResponse.NewTrophy)
+    func presentNoNewTrophy(response: GameResponse.NoNewTrophy)
 }
 
-protocol GamePresenterOutput: class
-{
-  func displaySomething(viewModel: GameViewModel)
+protocol GamePresenterOutput: class {
+    func displaySomething(viewModel: GameViewModel)
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy)
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy)
 }
 
-class GamePresenter: GamePresenterInput
-{
+class GamePresenter: GamePresenterInput {
   weak var output: GamePresenterOutput!
   
   // MARK: Presentation logic
   
-  func presentSomething(response: GameResponse)
-  {
+  func presentSomething(response: GameResponse) {
     // NOTE: Format the response from the Interactor and pass the result back to the View Controller
     
     let viewModel = GameViewModel()
     output.displaySomething(viewModel)
   }
+    
+    func presentNewTrophy(response: GameResponse.NewTrophy) {
+        
+        var viewModel = GameViewModel.NewTrophy()
+        viewModel.trophies = GameResponse.NewTrophy().trophies
+        
+        output.displayNewTrophies(viewModel)
+        
+    }
+    
+    func presentNoNewTrophy(response: GameResponse.NoNewTrophy) {
+        
+        let viewModel = GameViewModel.NoNewTrophy()
+        output.displayNoNewTrophy(viewModel)
+        
+    }
 }

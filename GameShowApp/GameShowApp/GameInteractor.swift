@@ -11,33 +11,73 @@
 
 import UIKit
 
-protocol GameInteractorInput
-{
-  func doSomething(request: GameRequest)
+protocol GameInteractorInput {
+    func doSomething(request: GameRequest)
+    
+    func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
 }
 
-protocol GameInteractorOutput
-{
-  func presentSomething(response: GameResponse)
+protocol GameInteractorOutput {
+    func presentSomething(response: GameResponse)
+    
+    func presentNewTrophy(response: GameResponse.NewTrophy)
+    func presentNoNewTrophy(response: GameResponse.NoNewTrophy)
 }
 
-class GameInteractor: GameInteractorInput
-{
-  var output: GameInteractorOutput!
-  var worker: GameWorker!
+class GameInteractor: GameInteractorInput {
+    var output: GameInteractorOutput!
+    var worker: GameWorker!
+    var workerTrophyManager: TrophyModelManager!
   
   // MARK: Business logic
   
-  func doSomething(request: GameRequest)
-  {
-    // NOTE: Create some Worker to do the work
+    func doSomething(request: GameRequest) {
+        // NOTE: Create some Worker to do the work
     
-    worker = GameWorker()
-    worker.doSomeWork()
+        worker = GameWorker()
+        worker.doSomeWork()
     
-    // NOTE: Pass the result to the Presenter
+        // NOTE: Pass the result to the Presenter
     
-    let response = GameResponse()
-    output.presentSomething(response)
-  }
+        let response = GameResponse()
+        output.presentSomething(response)
+    }
+    
+    func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy) {
+        
+        if request.score! % 1000 == 0 {
+            workerTrophyManager = TrophyModelManager()
+            workerTrophyManager.getTrophyByScore(request.score!) { (trophies) in
+                if trophies.count > 0 {
+                    
+                    var trophiesExist = [TrophyEntity]?()
+                    
+                    for item in trophies {
+                        if !(TrophyManager.sharedInstance.trophyExists(item.score!)) {
+                            trophiesExist?.append(item)
+                        }
+                    }
+                    
+                    if trophiesExist?.count > 0 {
+                        var response = GameResponse.NewTrophy()
+                        response.trophies = trophies
+                        self.output.presentNewTrophy(response)
+                        return
+                    } else {
+                        let response = GameResponse.NoNewTrophy()
+                        self.output.presentNoNewTrophy(response)
+                    }
+                    
+                } else {
+                    let response = GameResponse.NoNewTrophy()
+                    self.output.presentNoNewTrophy(response)
+                }
+            }
+        } else {
+            let response = GameResponse.NoNewTrophy()
+            self.output.presentNoNewTrophy(response)
+        }
+        
+        
+    }
 }

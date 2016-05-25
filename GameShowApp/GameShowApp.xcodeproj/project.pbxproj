@@ -29,6 +29,8 @@
 		5E098F331CE3592E00F939A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F311CE3592E00F939A5 /* Main.storyboard */; };
 		5E098F351CE3592E00F939A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F341CE3592E00F939A5 /* Assets.xcassets */; };
 		5ED20DF51CF484B600A77BE3 /* TrophyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */; };
+		5ED20DF91CF49D1B00A77BE3 /* TrophyModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED20DF81CF49D1B00A77BE3 /* TrophyModelManager.swift */; };
+		5ED20DFB1CF49D7B00A77BE3 /* TrophyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED20DFA1CF49D7B00A77BE3 /* TrophyEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		5E098F341CE3592E00F939A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E098F361CE3592E00F939A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyManager.swift; sourceTree = "<group>"; };
+		5ED20DF81CF49D1B00A77BE3 /* TrophyModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyModelManager.swift; sourceTree = "<group>"; };
+		5ED20DFA1CF49D7B00A77BE3 /* TrophyEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				11473ADB1CF32E5800842975 /* ModelManager.swift */,
+				5ED20DF81CF49D1B00A77BE3 /* TrophyModelManager.swift */,
 			);
 			name = ModelManager;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				5E098F361CE3592E00F939A5 /* Info.plist */,
 				113A01BF1CF3460A00D61B0D /* Question.swift */,
 				113A01C11CF3461A00D61B0D /* Answer.swift */,
+				5ED20DFA1CF49D7B00A77BE3 /* TrophyEntity.swift */,
 			);
 			path = GameShowApp;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED20DFB1CF49D7B00A77BE3 /* TrophyEntity.swift in Sources */,
 				1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */,
 				113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */,
 				113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */,
@@ -236,6 +243,7 @@
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
 				5ED20DF51CF484B600A77BE3 /* TrophyManager.swift in Sources */,
+				5ED20DF91CF49D1B00A77BE3 /* TrophyModelManager.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

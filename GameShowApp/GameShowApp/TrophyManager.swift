@@ -128,4 +128,19 @@ public class TrophyManager {
         
     }
     
+    
+    func trophyExists(score: Int) -> Bool {
+        
+        let results = TrophyManager.sharedInstance.getTrophyByScore(score)
+        
+        for item in results {
+            if item.score == score {
+                return true
+            }
+        }
+        
+        return false
+        
+    }
+    
 }
