@@ -44,7 +44,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Começar"/>
                                 <connections>
-                                    <segue destination="l0T-MW-uAK" kind="show" id="E6o-IG-qQQ"/>
+                                    <segue destination="l0T-MW-uAK" kind="show" id="wrq-23-YHL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,11 +94,10 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="1 Jogador"/>
                                 <connections>
-                                    <action selector="SinglePlayer:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="Jyf-MI-b0E"/>
                                     <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion" id="nLn-Ms-HAJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uot-Lb-ibN" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="606" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.92203491926193237" green="0.40600723028182983" blue="0.46242129802703857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -108,11 +107,10 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="2 Jogadores"/>
                                 <connections>
-                                    <action selector="twoPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="soo-Ri-mpv"/>
-                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion3" id="qkg-81-fjN"/>
+                                    <action selector="selectPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="ymW-KG-EXJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-jP-bK5" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="716" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.3300528526" green="0.84071052069999996" blue="0.71913725139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -122,11 +120,10 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="3 Jogadores"/>
                                 <connections>
-                                    <action selector="threePlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="MOh-0f-HZJ"/>
-                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion2" id="Vdx-fz-38e"/>
+                                    <action selector="selectPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="w54-XU-d9L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-9h-iaX" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="594" y="826" width="733" height="88"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -136,8 +133,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="4 Jogadores"/>
                                 <connections>
-                                    <action selector="fourPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="s9f-k9-yfP"/>
-                                    <segue destination="A6L-A4-pHi" kind="show" identifier="segueToQuestion4" id="3Sr-Rz-cTR"/>
+                                    <action selector="selectPlayers:" destination="l0T-MW-uAK" eventType="primaryActionTriggered" id="NiO-JH-G92"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,15 +154,78 @@
                             <constraint firstItem="w3h-jP-bK5" firstAttribute="centerX" secondItem="E1c-EX-gpw" secondAttribute="centerX" id="xfc-4j-mqK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="KPF-6M-xzK" kind="presentation" identifier="inputNames" id="81i-3w-JEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-cS-uMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3169" y="673"/>
+            <point key="canvasLocation" x="3249" y="-683"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Username View Controller-->
+        <scene sceneID="xpc-6z-E6s">
+            <objects>
+                <viewController id="KPF-6M-xzK" customClass="ChooseUsernameViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SWy-Lg-FXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="me9-rH-NYa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U9V-fc-Ink">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="OLK-Ll-dwc">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kll-Sw-11U">
+                                <rect key="frame" x="840" y="517" width="241" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="4Zl-hn-tEv"/>
+                                    <constraint firstAttribute="height" constant="46" id="brF-Dg-tH2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-jS-lma">
+                                <rect key="frame" x="931" y="460" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtq-KK-w9j">
+                                <rect key="frame" x="896" y="597" width="129" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="chooseName:" destination="KPF-6M-xzK" eventType="primaryActionTriggered" id="eai-EN-cXV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kll-Sw-11U" firstAttribute="centerY" secondItem="OLK-Ll-dwc" secondAttribute="centerY" id="2Da-Qm-DQ7"/>
+                            <constraint firstItem="OLK-Ll-dwc" firstAttribute="top" secondItem="SWy-Lg-FXb" secondAttribute="bottom" id="8D6-rO-e0A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OLK-Ll-dwc" secondAttribute="trailing" constant="-20" id="FDt-VJ-mzI"/>
+                            <constraint firstItem="me9-rH-NYa" firstAttribute="top" secondItem="OLK-Ll-dwc" secondAttribute="bottom" id="Hdi-L7-pj0"/>
+                            <constraint firstItem="kll-Sw-11U" firstAttribute="top" secondItem="eAl-jS-lma" secondAttribute="bottom" constant="36" id="JwY-gK-cuV"/>
+                            <constraint firstItem="kll-Sw-11U" firstAttribute="centerX" secondItem="OLK-Ll-dwc" secondAttribute="centerX" id="c7P-7T-yRE"/>
+                            <constraint firstItem="OLK-Ll-dwc" firstAttribute="leading" secondItem="U9V-fc-Ink" secondAttribute="leadingMargin" constant="-20" id="k1d-cL-zCu"/>
+                            <constraint firstItem="eAl-jS-lma" firstAttribute="centerX" secondItem="OLK-Ll-dwc" secondAttribute="centerX" id="qd8-HH-nfR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="kll-Sw-11U" id="iKD-dg-47b"/>
+                        <outlet property="playerLabel" destination="eAl-jS-lma" id="tGs-NS-9kF"/>
+                        <segue destination="A6L-A4-pHi" kind="show" identifier="startGame" id="81z-jU-NZe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZ2-F3-Fk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3169" y="1906"/>
+        </scene>
+        <!--Game View Controller-->
         <scene sceneID="IpW-bk-fCI">
             <objects>
-                <viewController id="A6L-A4-pHi" sceneMemberID="viewController">
+                <viewController id="A6L-A4-pHi" customClass="GameViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2v-IQ-4nQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ECX-l6-eFW"/>
@@ -178,84 +237,90 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundGameShow" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-99-6zZ">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-47-XZE" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="796" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.73725490196078436" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="632" id="czh-il-CBq"/>
+                                    <constraint firstAttribute="height" constant="161" id="s6b-K6-JxN"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Rio de Janeiro"/>
+                                <state key="normal" title="b"/>
                                 <connections>
-                                    <action selector="option2:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="2ex-NR-fAn"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="cIB-Rl-fXc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="190" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="632" id="0jV-rh-i05"/>
+                                    <constraint firstAttribute="height" constant="161" id="e47-4w-1lt"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Brasília"/>
+                                <state key="normal" title="a"/>
                                 <connections>
-                                    <action selector="option1:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="pr3-Nb-QeX"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="0YE-GM-whU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="553" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="632" id="9J0-1q-FJ9"/>
+                                    <constraint firstAttribute="height" constant="161" id="JzC-op-UnZ"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="São Paulo"/>
+                                <state key="normal" title="c"/>
                                 <connections>
-                                    <action selector="option3:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="1ye-Bc-msh"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="kdQ-Jl-zPA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
-                                <rect key="frame" x="1098" y="796" width="632" height="161"/>
-                                <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Buenos Aires"/>
-                                <connections>
-                                    <action selector="option4:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="LLY-wj-1Gh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual é a capital do Brasil?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
                                 <rect key="frame" x="20" y="148" width="1880" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-ae-ePQ">
-                                <rect key="frame" x="0.0" y="10" width="1920" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                                <rect key="frame" x="1098" y="796" width="632" height="161"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="oT5-hO-WmS"/>
+                                    <constraint firstAttribute="height" constant="161" id="5kk-nB-eXX"/>
+                                    <constraint firstAttribute="width" constant="632" id="h2o-O9-6g3"/>
                                 </constraints>
-                            </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ib4-Tg-zwE">
-                                <rect key="frame" x="20" y="39" width="1880" height="10"/>
-                            </progressView>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="d"/>
+                                <connections>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="LKm-gx-2vk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="1DD-47-XZE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="170" id="3kY-Jp-QkX"/>
+                            <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="1DD-47-XZE" secondAttribute="bottom" constant="123" id="6jz-Jp-rTD"/>
                             <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="148" id="86d-3M-4Hj"/>
+                            <constraint firstItem="Q5u-Pu-vPo" firstAttribute="centerX" secondItem="ibC-Pl-iHu" secondAttribute="centerX" id="DlG-ql-Dge"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
-                            <constraint firstItem="Fnz-ae-ePQ" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leading" id="Ucj-qk-Cbh"/>
-                            <constraint firstItem="Ib4-Tg-zwE" firstAttribute="top" secondItem="Fnz-ae-ePQ" secondAttribute="bottom" constant="19" id="YIy-GR-Ii1"/>
-                            <constraint firstItem="Ib4-Tg-zwE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="e0u-I1-TZP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ib4-Tg-zwE" secondAttribute="trailing" id="gEq-Tl-des"/>
-                            <constraint firstAttribute="trailing" secondItem="Fnz-ae-ePQ" secondAttribute="trailing" id="kcF-Aw-ffa"/>
-                            <constraint firstItem="Fnz-ae-ePQ" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="10" id="u7N-o8-iUS"/>
+                            <constraint firstItem="ibC-Pl-iHu" firstAttribute="top" secondItem="Q5u-Pu-vPo" secondAttribute="bottom" constant="82" id="RUe-MK-lfp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ibC-Pl-iHu" secondAttribute="trailing" constant="170" id="VhY-9K-df1"/>
+                            <constraint firstItem="1DD-47-XZE" firstAttribute="top" secondItem="5Js-Ha-2wf" secondAttribute="bottom" constant="82" id="axl-T1-bRd"/>
+                            <constraint firstItem="5Js-Ha-2wf" firstAttribute="centerX" secondItem="1DD-47-XZE" secondAttribute="centerX" id="eet-OI-ef5"/>
+                            <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="ibC-Pl-iHu" secondAttribute="bottom" constant="123" id="n8v-Vz-p6X"/>
                             <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="xAt-It-lOS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonOption1" destination="5Js-Ha-2wf" id="7NT-R4-jB3"/>
-                        <outlet property="buttonOption2" destination="1DD-47-XZE" id="ZWM-jF-Te9"/>
-                        <outlet property="buttonOption3" destination="Q5u-Pu-vPo" id="HVX-sr-DIQ"/>
-                        <outlet property="buttonOption4" destination="ibC-Pl-iHu" id="NAn-Y5-ATe"/>
-                        <outlet property="constarintProgressBar" destination="kcF-Aw-ffa" id="xuQ-pl-o07"/>
-                        <outlet property="labelQuestion" destination="Pq8-DX-gGl" id="gUi-ka-vbk"/>
-                        <outlet property="progressBar" destination="Ib4-Tg-zwE" id="hhT-lU-Vy6"/>
+                        <outlet property="answer0Button" destination="5Js-Ha-2wf" id="9PS-zN-p0a"/>
+                        <outlet property="answer1Button" destination="1DD-47-XZE" id="b2s-IE-6IE"/>
+                        <outlet property="answer2Button" destination="Q5u-Pu-vPo" id="QEZ-nb-Aq1"/>
+                        <outlet property="answer3Button" destination="ibC-Pl-iHu" id="33C-4k-6aX"/>
+                        <outlet property="phraseQuestionLabel" destination="Pq8-DX-gGl" id="dgq-yW-OSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06j-hh-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5258" y="673"/>
+            <point key="canvasLocation" x="3082" y="653"/>
         </scene>
         <!--Trophy View Controller-->
         <scene sceneID="cgm-co-pqf">
@@ -294,6 +359,6 @@
         <image name="trophies" width="1224" height="572"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Sr-Rz-cTR"/>
+        <segue reference="nLn-Ms-HAJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -54,6 +54,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
   
   func doSomethingOnLoad() {
     // NOTE: Ask the Interactor to do some work
+    output.doSomething()
+    }
     
     let request = GameRequest()
     output.doSomething(request)
@@ -92,3 +94,4 @@ class GameViewController: UIViewController, GameViewControllerInput {
         print("Pronto!!!! - Nenhum Troféu")
     }
 }
+

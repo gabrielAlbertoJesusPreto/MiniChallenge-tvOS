@@ -11,12 +11,13 @@
 
 import UIKit
 
-class GameWorker
-{
+class GameWorker {
   // MARK: Business Logic
   
-  func doSomeWork()
-  {
-    // NOTE: Do the work
+    func getAnswerWork(completionHandler: (question:Question) -> ()) {
+    let dbManager = ModelManager.sharedInstance
+    dbManager.getCurrentQuestion { (question) in
+        completionHandler(question: question)
+    }
   }
 }

@@ -34,3 +34,12 @@ struct GameViewModel {
         var result = true
     }
 }
+
+struct GameScoreViewModel {
+    var textAlert:String?
+    var title:String?
+}
+
+struct GameNextQuestionRequest {
+    
+}

@@ -13,24 +13,20 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension GameViewController: GamePresenterOutput
-{
+extension GameViewController: GamePresenterOutput {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
   {
     router.passDataToNextScene(segue)
   }
 }
 
-extension GameInteractor: GameViewControllerOutput
-{
+extension GameInteractor: GameViewControllerOutput {
 }
 
-extension GamePresenter: GameInteractorOutput
-{
+extension GamePresenter: GameInteractorOutput {
 }
 
-class GameConfigurator
-{
+class GameConfigurator {
   // MARK: Object lifecycle
   
   class var sharedInstance: GameConfigurator
@@ -49,8 +45,7 @@ class GameConfigurator
   
   // MARK: Configuration
   
-  func configure(viewController: GameViewController)
-  {
+  func configure(viewController: GameViewController) {
     let router = GameRouter()
     router.viewController = viewController
     
