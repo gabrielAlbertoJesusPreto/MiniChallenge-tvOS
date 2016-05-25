@@ -13,12 +13,12 @@ import UIKit
 
 protocol GameViewControllerInput {
     func displaySomething(viewModel: GameViewModel)
+    func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
 protocol GameViewControllerOutput {
     func doSomething()
     func selectAnswer(request: GameScoreRequest)
-    func nextQuestion(request: )
 }
 
 class GameViewController: UIViewController, GameViewControllerInput {
@@ -52,6 +52,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
   
   func doSomethingOnLoad() {
     // NOTE: Ask the Interactor to do some work
+    output.doSomething()
+    }
     
     var players: [(String, Int)]?
     
@@ -61,28 +63,11 @@ class GameViewController: UIViewController, GameViewControllerInput {
         request.isCorrect = isCorrect
         output.selectAnswer(request)
     }
-  
-  // MARK: Display logic
-  
-  func displaySomething(viewModel: GameViewModel) {
-    dispatch_async(dispatch_get_main_queue()) {
-        self.phraseQuestionLabel.text = viewModel.phraseQuestion
-        self.level = viewModel.level!
-        self.correctPosition = viewModel.correctPosition!
-        self.answer0Button.setTitle(viewModel.answers![0], forState: UIControlState.Normal)
-        self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
-        self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
-        self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
-    }
     
-    func displayAlertScore(viewModel: GameScoreViewModel) {
-            let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        
-    }
+
 
     func verifyCorrectAnswer(tag:Int,button:UIButton) {
+        
         if tag == correctPosition {
             button.backgroundColor = UIColor.greenColor()
             isCorrect = true
@@ -92,16 +77,35 @@ class GameViewController: UIViewController, GameViewControllerInput {
             isCorrect = false
         }
         self.selectAnswer()
-        
-        let request = GameRequest()
-        output.doSomething(request)
     }
     
+    @IBAction func selectAnswer(sender: AnyObject) {
+        let button = sender as? UIButton
+        self.verifyCorrectAnswer(sender.tag, button: button!)
+    }
     // MARK: Display logic
     
     func displaySomething(viewModel: GameViewModel) {
-        // NOTE: Display the result from the Presenter
         
-        // nameTextField.text = viewModel.name
+        dispatch_async(dispatch_get_main_queue()) {
+            self.phraseQuestionLabel.text = viewModel.phraseQuestion
+            self.level = viewModel.level!
+            self.correctPosition = viewModel.correctPosition!
+            
+            self.answer0Button.setTitle(viewModel.answers![0], forState: UIControlState.Normal)
+            self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
+            self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
+            self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
+        }
+        
+        
+    }
+    
+    func displayAlertScore(viewModel: GameScoreViewModel) {
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
     }
 }
+

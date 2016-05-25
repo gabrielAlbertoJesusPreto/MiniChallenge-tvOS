@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -44,7 +44,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Começar"/>
                                 <connections>
-                                    <segue destination="A6L-A4-pHi" kind="show" id="BbJ-s6-Jmg"/>
+                                    <segue destination="l0T-MW-uAK" kind="show" id="wrq-23-YHL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-cS-uMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="-907"/>
+            <point key="canvasLocation" x="3249" y="-683"/>
         </scene>
         <!--Choose Username View Controller-->
         <scene sceneID="xpc-6z-E6s">
@@ -222,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="3169" y="1906"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="IpW-bk-fCI">
             <objects>
                 <viewController id="A6L-A4-pHi" customClass="GameViewController" customModule="GameShowApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="b"/>
                                 <connections>
-                                    <action selector="answerButton:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="prz-cn-3pn"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="cIB-Rl-fXc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-Ha-2wf" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
@@ -260,7 +260,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="a"/>
                                 <connections>
-                                    <action selector="answerButton:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="IQZ-ML-ptG"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="0YE-GM-whU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-Pu-vPo" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
@@ -273,16 +273,16 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="c"/>
                                 <connections>
-                                    <action selector="answerButton:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="s67-wr-F4Z"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="kdQ-Jl-zPA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual é a capital do Brasil?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
                                 <rect key="frame" x="20" y="148" width="1880" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-Pl-iHu" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="1098" y="796" width="632" height="161"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.77647058820000003" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -292,7 +292,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="d"/>
                                 <connections>
-                                    <action selector="answerButton:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="yfa-Ko-PZS"/>
+                                    <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="LKm-gx-2vk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -300,10 +300,23 @@
                             <constraint firstItem="1DD-47-XZE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="170" id="3kY-Jp-QkX"/>
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="1DD-47-XZE" secondAttribute="bottom" constant="123" id="6jz-Jp-rTD"/>
                             <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="148" id="86d-3M-4Hj"/>
+                            <constraint firstItem="Q5u-Pu-vPo" firstAttribute="centerX" secondItem="ibC-Pl-iHu" secondAttribute="centerX" id="DlG-ql-Dge"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
+                            <constraint firstItem="ibC-Pl-iHu" firstAttribute="top" secondItem="Q5u-Pu-vPo" secondAttribute="bottom" constant="82" id="RUe-MK-lfp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ibC-Pl-iHu" secondAttribute="trailing" constant="170" id="VhY-9K-df1"/>
+                            <constraint firstItem="1DD-47-XZE" firstAttribute="top" secondItem="5Js-Ha-2wf" secondAttribute="bottom" constant="82" id="axl-T1-bRd"/>
+                            <constraint firstItem="5Js-Ha-2wf" firstAttribute="centerX" secondItem="1DD-47-XZE" secondAttribute="centerX" id="eet-OI-ef5"/>
+                            <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="ibC-Pl-iHu" secondAttribute="bottom" constant="123" id="n8v-Vz-p6X"/>
                             <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="xAt-It-lOS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answer0Button" destination="5Js-Ha-2wf" id="9PS-zN-p0a"/>
+                        <outlet property="answer1Button" destination="1DD-47-XZE" id="b2s-IE-6IE"/>
+                        <outlet property="answer2Button" destination="Q5u-Pu-vPo" id="QEZ-nb-Aq1"/>
+                        <outlet property="answer3Button" destination="ibC-Pl-iHu" id="33C-4k-6aX"/>
+                        <outlet property="phraseQuestionLabel" destination="Pq8-DX-gGl" id="dgq-yW-OSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06j-hh-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,6 +359,6 @@
         <image name="trophies" width="1224" height="572"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="81z-jU-NZe"/>
+        <segue reference="nLn-Ms-HAJ"/>
     </inferredMetricsTieBreakers>
 </document>
