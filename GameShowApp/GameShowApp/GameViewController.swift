@@ -19,6 +19,8 @@ protocol GameViewControllerInput {
 protocol GameViewControllerOutput {
     func doSomething()
     func selectAnswer(request: GameScoreRequest)
+    func nextQuestion()
+    
 }
 
 class GameViewController: UIViewController, GameViewControllerInput {
@@ -28,11 +30,13 @@ class GameViewController: UIViewController, GameViewControllerInput {
     @IBOutlet weak var answer2Button: CustomButton!
     @IBOutlet weak var answer3Button: CustomButton!
     
+    @IBOutlet weak var activiryIndicator: UIActivityIndicatorView!
     var output: GameViewControllerOutput!
     var router: GameRouter!
     var correctPosition = 0
     var level = 0
     var isCorrect = false
+    var players: [(String, Int)]?
   
   // MARK: Object lifecycle
   
@@ -46,26 +50,14 @@ class GameViewController: UIViewController, GameViewControllerInput {
   override func viewDidLoad() {
     super.viewDidLoad()
     doSomethingOnLoad()
+    activiryIndicator.startAnimating()
   }
-  
-  // MARK: Event handling
-  
-  func doSomethingOnLoad() {
-    // NOTE: Ask the Interactor to do some work
-    output.doSomething()
+    
+    @IBAction func selectAnswer(sender: AnyObject) {
+        let button = sender as? UIButton
+        self.verifyCorrectAnswer(sender.tag, button: button!)
     }
     
-    var players: [(String, Int)]?
-    
-    func selectAnswer() {
-        var request = GameScoreRequest()
-        request.level = level
-        request.isCorrect = isCorrect
-        output.selectAnswer(request)
-    }
-    
-
-
     func verifyCorrectAnswer(tag:Int,button:UIButton) {
         
         if tag == correctPosition {
@@ -76,17 +68,35 @@ class GameViewController: UIViewController, GameViewControllerInput {
             button.backgroundColor = UIColor.redColor()
             isCorrect = false
         }
-        self.selectAnswer()
+        output.nextQuestion()
+        //self.selectAnswer()
+        
     }
     
-    @IBAction func selectAnswer(sender: AnyObject) {
-        let button = sender as? UIButton
-        self.verifyCorrectAnswer(sender.tag, button: button!)
+    // MARK: Protocol
+    func doSomethingOnLoad() {
+        // NOTE: Ask the Interactor to do some work
+        output.doSomething()
     }
+    
+    func selectAnswer() {
+        var request = GameScoreRequest()
+        request.level = level
+        request.isCorrect = isCorrect
+        output.selectAnswer(request)
+    }
+    
+    
     // MARK: Display logic
     
     func displaySomething(viewModel: GameViewModel) {
-        
+        activiryIndicator.stopAnimating()
+        activiryIndicator.hidden = true
+        phraseQuestionLabel.hidden = false
+        answer0Button.hidden = false
+        answer1Button.hidden = false
+        answer2Button.hidden = false
+        answer3Button.hidden = false
         dispatch_async(dispatch_get_main_queue()) {
             self.phraseQuestionLabel.text = viewModel.phraseQuestion
             self.level = viewModel.level!
@@ -97,8 +107,6 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
             self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
         }
-        
-        
     }
     
     func displayAlertScore(viewModel: GameScoreViewModel) {

@@ -50,22 +50,34 @@ class GamePresenter: GamePresenterInput {
   // MARK: Presentation logic
   
   func presentSomething(response: GameResponse) {
-    // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-    
     var viewModel = GameViewModel()
-    var i = 0
-    viewModel.phraseQuestion = response.question!.phrase
-    viewModel.level = response.question?.level
-    var answers = [String]()
-    for item in (response.question?.answers?.shuffle())! {
-        answers.append(item.phrase!)
-        if item.isCorrect == 1 {
-            viewModel.correctPosition = i
+    
+    if response.sucess == true {
+        var i = 0
+        viewModel.phraseQuestion = response.question!.phrase
+        viewModel.level = response.question?.level
+        var answers = [String]()
+        for item in (response.question?.answers?.shuffle())! {
+            answers.append(item.phrase!)
+            if item.isCorrect == 1 {
+                viewModel.correctPosition = i
+            }
+            i += 1
         }
-        i += 1
+        viewModel.answers = answers
+        output.displaySomething(viewModel)
+    } else {
+        var viewModel = GameScoreViewModel()
+        let textAlert = "Parabéns você terminou o jogo"
+        let title = "Fim de jogo"
+        
+        viewModel.textAlert = textAlert
+        viewModel.title = title
+        output.displayAlertScore(viewModel)
     }
-    viewModel.answers = answers
-    output.displaySomething(viewModel)
+    
+   
+    
   }
     
     func presentScore(response: GameScoreResponse) {

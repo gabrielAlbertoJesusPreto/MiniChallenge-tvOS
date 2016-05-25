@@ -14,6 +14,7 @@ import UIKit
 
 struct GameResponse {
     var question:Question?
+    var sucess:Bool?
 }
 
 struct GameViewModel {
@@ -39,5 +40,13 @@ struct GameScoreViewModel {
 }
 
 struct GameNextQuestionRequest {
+    
+}
+
+struct GameNextQuestionResponse {
+    
+}
+
+struct GameNextQuestionViewModel {
     
 }

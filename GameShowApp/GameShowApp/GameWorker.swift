@@ -14,10 +14,17 @@ import UIKit
 class GameWorker {
   // MARK: Business Logic
   
-    func getAnswerWork(completionHandler: (question:Question) -> ()) {
+    func getAnswerWork(completionHandler: (question:Question, sucess:Bool) -> ()) {
     let dbManager = ModelManager.sharedInstance
-    dbManager.getCurrentQuestion { (question) in
-        completionHandler(question: question)
-    }
+        dbManager.getCurrentQuestion { (question, sucess) in
+            completionHandler(question: question, sucess: sucess)
+        }
   }
+    
+    func nextQuestion(completionHandler: (question:Question, sucess:Bool) -> ()) {
+        let dbManager = ModelManager.sharedInstance
+        dbManager.getNextQuestion { (question, sucess) in
+            completionHandler(question: question, sucess: sucess)
+        }
+    }
 }

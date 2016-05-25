@@ -28,6 +28,7 @@ class ModelManager {
                         questionObject.resultsAnswers = question.valueForKey("answer") as? [CKReference]
                         self.questions.append(questionObject)
                 }
+                    self.questions = self.questions.shuffle()
                     completionHandler(sucess: true)
                 
             } else {
@@ -37,7 +38,7 @@ class ModelManager {
     }
  }
     
-    func fetchAnswer(question:Question, completionHandler: (answers: [Answer]) -> ()) {
+    func fetchAnswer(question:Question, completionHandler: (answers: [Answer],sucess:Bool) -> ()) {
         var answers = [Answer]()
         var employeedRecordIds = [CKRecordID]()
         
@@ -54,22 +55,41 @@ class ModelManager {
                     answer.isCorrect = record.valueForKey("isCorrect") as? Int
                     answers.append(answer)
                 }
-                completionHandler(answers: answers)
+                completionHandler(answers: answers,sucess: true)
             } else {
+                let myAnswers = [Answer]()
+                completionHandler(answers: myAnswers, sucess: false)
                 print(#function,"Erro no fetch \(error)")
             }
         }
         CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
         
     }
-        func getCurrentQuestion(completionHandler: (question:Question) ->()) {
+    func getCurrentQuestion(completionHandler: (question:Question, sucess:Bool) ->()) {
             self.getQuestions { (sucess) in
-                self.fetchAnswer(self.questions[self.currentQuestion], completionHandler: { (answers) in
+                self.fetchAnswer(self.questions[self.currentQuestion], completionHandler: { (answers, sucess) in
                     self.questions[self.currentQuestion].answers = answers
-                    completionHandler(question: self.questions[self.currentQuestion])
+                    let currentValue = self.currentQuestion
+                    self.currentQuestion+=1
+                    completionHandler(question: self.questions[currentValue],sucess: sucess)
                 })
             }
         }
-}
     
+    func getNextQuestion(completionHandler: (question:Question,sucess:Bool) ->()) {
+        if currentQuestion >= questions.count {
+            let questionNil = Question()
+            completionHandler(question: questionNil, sucess: false)
+        } else {
+            self.fetchAnswer(self.questions[self.currentQuestion], completionHandler: { (answers, sucess) in
+                self.questions[self.currentQuestion].answers = answers
+                let currentValue = self.currentQuestion
+                self.currentQuestion+=1
+                completionHandler(question: self.questions[currentValue],sucess: sucess)
+            })
+        }
+        
+    }
+}
+
 

@@ -12,8 +12,10 @@
 import UIKit
 
 protocol GameInteractorInput {
-  func doSomething()
-  func selectAnswer(request: GameScoreRequest)
+    func doSomething()
+    func selectAnswer(request: GameScoreRequest)
+    func nextQuestion()
+    
 }
 
 protocol GameInteractorOutput {
@@ -31,9 +33,10 @@ class GameInteractor: GameInteractorInput {
   
   func doSomething() {
     worker = GameWorker()
-    worker.getAnswerWork { (question) in
+    worker.getAnswerWork { (question, sucess) in
         var response = GameResponse()
         response.question = question
+        response.sucess = sucess
         self.output.presentSomething(response)
     }
   }
@@ -47,5 +50,16 @@ class GameInteractor: GameInteractorInput {
         }
         response.isCorrect = request.isCorrect
         output.presentScore(response)
+    }
+    
+    func nextQuestion() {
+        worker = GameWorker()
+        worker.nextQuestion { (question, sucess) in
+            var response = GameResponse()
+            response.question = question
+            response.sucess = sucess
+            self.output.presentSomething(response)
+        }
+         
     }
 }
