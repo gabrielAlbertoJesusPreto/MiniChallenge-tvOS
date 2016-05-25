@@ -11,8 +11,7 @@
 
 import UIKit
 
-class GameWorker
-{
+class GameWorker {
   // MARK: Business Logic
   
     func getAnswerWork(completionHandler: (question:Question) -> ()) {

@@ -11,20 +11,40 @@
 
 import UIKit
 
-protocol GamePresenterInput
-{
+protocol GamePresenterInput {
     func presentSomething(response: GameResponse)
     func presentScore(response: GameScoreResponse)
 }
 
-protocol GamePresenterOutput: class
-{
+protocol GamePresenterOutput: class {
   func displaySomething(viewModel: GameViewModel)
     func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
-class GamePresenter: GamePresenterInput
-{
+extension CollectionType {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffle() -> [Generator.Element] {
+        var list = Array(self)
+        list.shuffleInPlace()
+        return list
+    }
+}
+
+extension MutableCollectionType where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffleInPlace() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in 0..<count - 1 {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            guard i != j else { continue }
+            swap(&self[i], &self[j])
+        }
+    }
+}
+
+class GamePresenter: GamePresenterInput {
   weak var output: GamePresenterOutput!
   
   // MARK: Presentation logic
@@ -37,7 +57,7 @@ class GamePresenter: GamePresenterInput
     viewModel.phraseQuestion = response.question!.phrase
     viewModel.level = response.question?.level
     var answers = [String]()
-    for item in (response.question?.answers)! {
+    for item in (response.question?.answers?.shuffle())! {
         answers.append(item.phrase!)
         if item.isCorrect == 1 {
             viewModel.correctPosition = i
@@ -49,10 +69,19 @@ class GamePresenter: GamePresenterInput
   }
     
     func presentScore(response: GameScoreResponse) {
-        let textAlert = "Parabéns você acertou e ganhou \(response.score) pontos"
+        var textAlert:String?
+        var title:String?
+        
+        if response.isCorrect == true {
+            textAlert = "Parabéns você acertou e ganhou \(response.score!) pontos"
+            title = "Você acertou"
+        } else {
+            textAlert = "Você não marcou pontos"
+            title = "Você errou"
+        }
         var viewModel = GameScoreViewModel()
         viewModel.textAlert = textAlert
-        viewModel.title = "Você acertou"
+        viewModel.title = title
         output.displayAlertScore(viewModel)
     }
 }

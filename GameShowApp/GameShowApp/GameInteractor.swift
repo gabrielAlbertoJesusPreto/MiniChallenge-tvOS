@@ -11,20 +11,17 @@
 
 import UIKit
 
-protocol GameInteractorInput
-{
+protocol GameInteractorInput {
   func doSomething()
   func selectAnswer(request: GameScoreRequest)
 }
 
-protocol GameInteractorOutput
-{
+protocol GameInteractorOutput {
   func presentSomething(response: GameResponse)
   func presentScore(response: GameScoreResponse)
 }
 
-class GameInteractor: GameInteractorInput
-{
+class GameInteractor: GameInteractorInput {
     var output: GameInteractorOutput!
     var worker: GameWorker!
     var workerScore:GameScoreWorker!
@@ -43,9 +40,12 @@ class GameInteractor: GameInteractorInput
     
     func selectAnswer(request: GameScoreRequest) {
         workerScore = GameScoreWorker()
-        let score = workerScore.calculateScore(request.level!)
         var response = GameScoreResponse()
-        response.score = score
+        if request.isCorrect == true {
+            let score = workerScore.calculateScore(request.level!)
+            response.score = score
+        }
+        response.isCorrect = request.isCorrect
         output.presentScore(response)
     }
 }

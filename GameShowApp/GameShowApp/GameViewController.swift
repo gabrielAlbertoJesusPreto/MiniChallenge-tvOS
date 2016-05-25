@@ -16,14 +16,13 @@ protocol GameViewControllerInput {
     func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
-protocol GameViewControllerOutput
-{
+protocol GameViewControllerOutput {
     func doSomething()
     func selectAnswer(request: GameScoreRequest)
+    func nextQuestion(request: )
 }
 
-class GameViewController: UIViewController, GameViewControllerInput
-{
+class GameViewController: UIViewController, GameViewControllerInput {
     @IBOutlet weak var phraseQuestionLabel: UILabel!
     @IBOutlet weak var answer0Button: CustomButton!
     @IBOutlet weak var answer1Button: CustomButton!
@@ -34,27 +33,25 @@ class GameViewController: UIViewController, GameViewControllerInput
     var router: GameRouter!
     var correctPosition = 0
     var level = 0
+    var isCorrect = false
   
   // MARK: Object lifecycle
   
-  override func awakeFromNib()
-  {
+  override func awakeFromNib() {
     super.awakeFromNib()
     GameConfigurator.sharedInstance.configure(self)
   }
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
     doSomethingOnLoad()
   }
   
   // MARK: Event handling
   
-  func doSomethingOnLoad()
-  {
+  func doSomethingOnLoad() {
     // NOTE: Ask the Interactor to do some work
     
     output.doSomething()
@@ -63,6 +60,7 @@ class GameViewController: UIViewController, GameViewControllerInput
     func selectAnswer() {
         var request = GameScoreRequest()
         request.level = level
+        request.isCorrect = isCorrect
         output.selectAnswer(request)
     }
   
@@ -81,22 +79,22 @@ class GameViewController: UIViewController, GameViewControllerInput
      }
     
     func displayAlertScore(viewModel: GameScoreViewModel) {
-        func alertErroEmail(){
             let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
-        }
+        
     }
-    
-    
 
     func verifyCorrectAnswer(tag:Int,button:UIButton) {
         if tag == correctPosition {
             button.backgroundColor = UIColor.greenColor()
-            self.selectAnswer()
+            isCorrect = true
+            
         } else {
             button.backgroundColor = UIColor.redColor()
+            isCorrect = false
         }
+        self.selectAnswer()
         
     }
     @IBAction func answerButton(sender: AnyObject) {

@@ -11,8 +11,7 @@
 
 import UIKit
 
-class GameScoreWorker
-{
+class GameScoreWorker {
   // MARK: Business Logic
   
     func calculateScore(score:Int) ->Int {

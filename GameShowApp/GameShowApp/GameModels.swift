@@ -25,13 +25,19 @@ struct GameViewModel {
 
 struct GameScoreRequest {
     var level:Int?
+    var isCorrect:Bool?
 }
 
 struct GameScoreResponse {
     var score:Int?
+    var isCorrect:Bool?
 }
 
 struct GameScoreViewModel {
     var textAlert:String?
     var title:String?
+}
+
+struct GameNextQuestionRequest {
+    
 }
