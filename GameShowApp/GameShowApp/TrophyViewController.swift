@@ -8,20 +8,31 @@
 
 import UIKit
 
-class TrophyViewController: UIViewController {
+class TrophyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("trophyCell", forIndexPath: indexPath) as! TrophyCollectionViewCell
+        
+        return cell
+    }
+    
+    override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        if let cell = context.nextFocusedView as? TrophyCollectionViewCell {
+            cell.trophyImageView.adjustsImageWhenAncestorFocused = true
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
