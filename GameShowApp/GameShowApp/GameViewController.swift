@@ -13,7 +13,6 @@ import UIKit
 
 protocol GameViewControllerInput {
     func displaySomething(viewModel: GameViewModel)
-    func displayAlertScore(viewModel: GameScoreViewModel)
 }
 
 protocol GameViewControllerOutput {
@@ -54,8 +53,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
   func doSomethingOnLoad() {
     // NOTE: Ask the Interactor to do some work
     
-    output.doSomething()
-  }
+    var players: [(String, Int)]?
     
     func selectAnswer() {
         var request = GameScoreRequest()
@@ -76,7 +74,6 @@ class GameViewController: UIViewController, GameViewControllerInput {
         self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
         self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
     }
-     }
     
     func displayAlertScore(viewModel: GameScoreViewModel) {
             let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
@@ -96,13 +93,15 @@ class GameViewController: UIViewController, GameViewControllerInput {
         }
         self.selectAnswer()
         
-    }
-    @IBAction func answerButton(sender: AnyObject) {
-        let button = sender as? UIButton
-        self.verifyCorrectAnswer(sender.tag, button: button!)
+        let request = GameRequest()
+        output.doSomething(request)
     }
     
-
+    // MARK: Display logic
     
-    
+    func displaySomething(viewModel: GameViewModel) {
+        // NOTE: Display the result from the Presenter
+        
+        // nameTextField.text = viewModel.name
+    }
 }

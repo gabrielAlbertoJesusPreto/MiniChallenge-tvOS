@@ -29,7 +29,7 @@
 		5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2E1CE3592E00F939A5 /* GameShowApp.xcdatamodeld */; };
 		5E098F331CE3592E00F939A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F311CE3592E00F939A5 /* Main.storyboard */; };
 		5E098F351CE3592E00F939A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E098F341CE3592E00F939A5 /* Assets.xcassets */; };
-		5ED20DF51CF484B600A77BE3 /* TrophyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */; };
+		EC97DE051CF47FC200C4F63F /* ChooseUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,7 @@
 		5E098F321CE3592E00F939A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E098F341CE3592E00F939A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E098F361CE3592E00F939A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5ED20DF41CF484B600A77BE3 /* TrophyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyManager.swift; sourceTree = "<group>"; };
+		EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUsernameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +135,7 @@
 				5E098F2C1CE3592E00F939A5 /* MainViewController.swift */,
 				1129CC2C1CE5FD8C004B859F /* CustomButton.swift */,
 				5E098F311CE3592E00F939A5 /* Main.storyboard */,
+				EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */,
 				11473AD91CF32E3700842975 /* TrophyViewController.swift */,
 				11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */,
 				5E098F341CE3592E00F939A5 /* Assets.xcassets */,
@@ -235,6 +236,7 @@
 				5E098F2D1CE3592E00F939A5 /* MainViewController.swift in Sources */,
 				113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */,
 				11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */,
+				EC97DE051CF47FC200C4F63F /* ChooseUsernameViewController.swift in Sources */,
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */,
