@@ -34,6 +34,7 @@
 		5E2DC4DA1CF5E27100928843 /* TrophyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2DC4D91CF5E27100928843 /* TrophyManager.swift */; };
 		5E2DC4DC1CF5E2C700928843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */; };
 		EC97DE051CF47FC200C4F63F /* ChooseUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */; };
+		EC97DE071CF5D94700C4F63F /* TrophyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		5E2DC4D91CF5E27100928843 /* TrophyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyManager.swift; sourceTree = "<group>"; };
 		5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUsernameViewController.swift; sourceTree = "<group>"; };
+		EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				5E098F311CE3592E00F939A5 /* Main.storyboard */,
 				5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */,
 				EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */,
+				EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */,
 				11473AD91CF32E3700842975 /* TrophyViewController.swift */,
 				11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */,
 				113A01BF1CF3460A00D61B0D /* Question.swift */,
@@ -242,6 +245,7 @@
 				5E2DC4D81CF5E20700928843 /* TrophyModelManager.swift in Sources */,
 				113A01BC1CF3381F00D61B0D /* GameRouter.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
+				EC97DE071CF5D94700C4F63F /* TrophyCollectionViewCell.swift in Sources */,
 				113A01BE1CF3381F00D61B0D /* GameWorker.swift in Sources */,
 				5E098F2D1CE3592E00F939A5 /* MainViewController.swift in Sources */,
 				113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */,
