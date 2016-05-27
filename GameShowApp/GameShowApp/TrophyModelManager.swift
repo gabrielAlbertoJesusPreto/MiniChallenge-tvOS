@@ -2,7 +2,7 @@
 //  TrophyModelManager.swift
 //  GameShowApp
 //
-//  Created by Gabriel Alberto de Jesus Preto on 24/05/16.
+//  Created by Gabriel Alberto de Jesus Preto on 25/05/16.
 //  Copyright © 2016 Gabriel Alberto. All rights reserved.
 //
 

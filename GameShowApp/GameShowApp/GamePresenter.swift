@@ -13,14 +13,39 @@ import UIKit
 
 protocol GamePresenterInput {
     func presentSomething(response: GameResponse)
+    func presentScore(response: GameScoreResponse)
     func presentNewTrophy(response: GameResponse.NewTrophy)
     func presentNoNewTrophy(response: GameResponse.NoNewTrophy)
 }
 
 protocol GamePresenterOutput: class {
     func displaySomething(viewModel: GameViewModel)
+    func displayAlertScore(viewModel: GameScoreViewModel)
     func displayNewTrophies(viewModel: GameViewModel.NewTrophy)
     func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy)
+}
+
+extension CollectionType {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffle() -> [Generator.Element] {
+        var list = Array(self)
+        list.shuffleInPlace()
+        return list
+    }
+}
+
+extension MutableCollectionType where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffleInPlace() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in 0..<count - 1 {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            guard i != j else { continue }
+            swap(&self[i], &self[j])
+        }
+    }
 }
 
 class GamePresenter: GamePresenterInput {
@@ -47,10 +72,42 @@ class GamePresenter: GamePresenterInput {
     output.displaySomething(viewModel)
   }
     
+    func presentScore(response: GameScoreResponse) {
+        var textAlert:String?
+        var title:String?
+        
+        if response.isCorrect == true {
+            textAlert = "Parabéns você acertou e ganhou \(response.score!) pontos"
+            title = "Você acertou"
+        } else {
+            textAlert = "Você não marcou pontos"
+            title = "Você errou"
+        }
+        var viewModel = GameScoreViewModel()
+        viewModel.textAlert = textAlert
+        viewModel.title = title
+        output.displayAlertScore(viewModel)
+    }
+    
     func presentNewTrophy(response: GameResponse.NewTrophy) {
         
         var viewModel = GameViewModel.NewTrophy()
-        viewModel.trophies = GameResponse.NewTrophy().trophies
+        viewModel.trophies = response.trophies
+        
+        if viewModel.trophies.count == 1 {
+            viewModel.message = "Você Ganhou o troféu de \(viewModel.trophies[0].score!) pontos!"
+        } else {
+            viewModel.trophies.sortInPlace({ $0.score < $1.score })
+            var trophiesString = ""
+            for item in viewModel.trophies {
+                
+                trophiesString += "  -\(item.score!) pontos \n"
+                
+            }
+            
+            viewModel.message = "Você Ganhou os seguintes troféus: \n \(trophiesString)"
+            
+        }
         
         output.displayNewTrophies(viewModel)
         
