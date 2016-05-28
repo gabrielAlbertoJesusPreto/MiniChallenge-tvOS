@@ -20,6 +20,7 @@ class ModelManager {
         let query = CKQuery(recordType: "Question", predicate: predicate)
         publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) in
             if error == nil {
+                
                 if let questionsResults = results {
                     for question in questionsResults {
                         let questionObject = Question()

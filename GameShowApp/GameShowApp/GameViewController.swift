@@ -43,6 +43,9 @@ class GameViewController: UIViewController, GameViewControllerInput {
     @IBOutlet weak var life2Image: UIImageView!
     @IBOutlet weak var life1Image: UIImageView!
     
+    @IBOutlet weak var viewTime: UIView!
+    @IBOutlet weak var constraintView: NSLayoutConstraint!
+    
     var output: GameViewControllerOutput!
     var router: GameRouter!
     var correctPosition = 0
@@ -54,6 +57,10 @@ class GameViewController: UIViewController, GameViewControllerInput {
     var life = 3
     let color = UIColor(netHex: 0x46C6B7, alpha: 1)
     var selectButton = UIButton()
+    
+    //Time
+    var timmer = NSTimer()
+    var aux:CGFloat!
 
   
   // MARK: Object lifecycle
@@ -67,7 +74,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    output.doSomething()
+    outDoSomething()
+    aux = self.viewTime.frame.width
     
     activiryIndicator.startAnimating()
     
@@ -75,10 +83,13 @@ class GameViewController: UIViewController, GameViewControllerInput {
     // ->>> Remove This - Test - Verification New Trophy    //
     //------------------------------------------------------//
         score = 0                                       //
-        scoreDidChange()                                    //
+        //scoreDidChange()                                    //
     //------------------------------------------------------//
     }
   
+    func outDoSomething() {
+        output.doSomething()
+    }
   // MARK: Event handling
     
     override var preferredFocusedView: UIView? {
@@ -87,8 +98,21 @@ class GameViewController: UIViewController, GameViewControllerInput {
     
     @IBAction func selectAnswer(sender: AnyObject) {
         let button = sender as? UIButton
+        timmer.invalidate()
         selectButton = button!
         self.verifyCorrectAnswer(sender.tag, button: button!)
+        
+    }
+    
+    func upadateProgressBar() {
+        if constraintView.constant == aux {
+            timmer.invalidate()
+            life -= 1
+            self.updateLife()
+            self.output.nextQuestion()
+        } else {
+            constraintView.constant = constraintView.constant + 1
+        }
         
     }
     
@@ -109,15 +133,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
         } else {
             button.backgroundColor = UIColor.redColor()
             life -= 1
-            if life == 2 {
-                life3Image.hidden = true
-            }
-            if life == 1 {
-                life2Image.hidden = true
-            }
-            if life == 0 {
-                life1Image.hidden = true
-            }
+            self.updateLife()
+            
         }
         
         if life == 0 {
@@ -129,6 +146,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
                 self.output.nextQuestion()
         }
     }
+    
 
     
     // MARK: Protocol
@@ -140,7 +158,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
         //output.selectAnswer(request)
     }
     
-    func hiddenLife() {
+    func updateLife() {
         if life == 3 {
             self.life1Image.hidden = false
             self.life2Image.hidden = false
@@ -174,7 +192,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.answer2Button.hidden = false
             self.answer3Button.hidden = false
             self.labelScore.hidden = false
-            self.hiddenLife()
+            self.updateLife()
+            self.viewTime.hidden = false
             self.selectButton.backgroundColor = self.color
             self.labelScore.text = String(self.score)
             self.phraseQuestionLabel.text = viewModel.phraseQuestion
@@ -184,6 +203,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
             self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
             self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
+            self.constraintView.constant = 0
+            self.timmer = NSTimer.scheduledTimerWithTimeInterval(Double((30)/self.aux), target: self, selector: #selector(GameViewController.upadateProgressBar), userInfo: nil, repeats: true)
             
         }
     }

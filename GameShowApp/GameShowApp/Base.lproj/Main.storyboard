@@ -45,7 +45,7 @@
                                     <segue destination="ZJC-cf-7RM" kind="show" id="NGw-XX-edW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TESTFLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-tj-4u5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TESTFLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-tj-4u5">
                                 <rect key="frame" x="388" y="214" width="1144" height="274"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="OAV-nZ-2eS"/>
@@ -347,11 +347,16 @@
                                     <constraint firstAttribute="height" constant="50" id="EH4-tq-22O"/>
                                 </constraints>
                             </imageView>
-                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1cd-nM-KeJ">
-                                <rect key="frame" x="20" y="39" width="1880" height="10"/>
-                            </progressView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OO3-Nr-Xeo">
+                                <rect key="frame" x="20" y="29" width="1880" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="etN-2I-5A6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="0lp-Vd-0m6"/>
                             <constraint firstItem="Xvu-99-6zZ" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leading" id="1NE-t1-GY6"/>
                             <constraint firstItem="LSg-Aa-WN0" firstAttribute="leading" secondItem="jUL-w0-gUT" secondAttribute="trailing" constant="15" id="1v8-n3-JKy"/>
                             <constraint firstItem="1DD-47-XZE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="170" id="3kY-Jp-QkX"/>
@@ -362,6 +367,7 @@
                             <constraint firstItem="Q5u-Pu-vPo" firstAttribute="centerX" secondItem="ibC-Pl-iHu" secondAttribute="centerX" id="DlG-ql-Dge"/>
                             <constraint firstItem="LSg-Aa-WN0" firstAttribute="centerY" secondItem="jUL-w0-gUT" secondAttribute="centerY" id="F52-2L-Jr0"/>
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="Xvu-99-6zZ" secondAttribute="bottom" id="FJg-pQ-spl"/>
+                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="29" id="G5I-Ed-StE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
                             <constraint firstItem="5s5-6p-Hoh" firstAttribute="leading" secondItem="LSg-Aa-WN0" secondAttribute="trailing" constant="15" id="OKR-2c-WfV"/>
                             <constraint firstItem="jUL-w0-gUT" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="107" id="QdC-rk-sUg"/>
@@ -369,15 +375,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ibC-Pl-iHu" secondAttribute="trailing" constant="170" id="VhY-9K-df1"/>
                             <constraint firstItem="ZiE-qc-4L5" firstAttribute="centerX" secondItem="ZrL-TM-Fkb" secondAttribute="centerX" id="ZoU-ic-UV0"/>
                             <constraint firstItem="1DD-47-XZE" firstAttribute="top" secondItem="5Js-Ha-2wf" secondAttribute="bottom" constant="82" id="axl-T1-bRd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1cd-nM-KeJ" secondAttribute="trailing" id="blf-4P-yMZ"/>
                             <constraint firstItem="jUL-w0-gUT" firstAttribute="leading" secondItem="5Js-Ha-2wf" secondAttribute="leading" id="e6H-qw-S0Q"/>
                             <constraint firstItem="5Js-Ha-2wf" firstAttribute="centerX" secondItem="1DD-47-XZE" secondAttribute="centerX" id="eet-OI-ef5"/>
                             <constraint firstItem="5s5-6p-Hoh" firstAttribute="centerY" secondItem="LSg-Aa-WN0" secondAttribute="centerY" id="gtx-o9-GK5"/>
-                            <constraint firstItem="1cd-nM-KeJ" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="39" id="myK-L0-tKD"/>
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="ibC-Pl-iHu" secondAttribute="bottom" constant="123" id="n8v-Vz-p6X"/>
                             <constraint firstItem="ZiE-qc-4L5" firstAttribute="centerY" secondItem="ZrL-TM-Fkb" secondAttribute="centerY" id="q9K-lJ-khi"/>
                             <constraint firstItem="Xvu-99-6zZ" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" id="rSD-Rh-yCw"/>
-                            <constraint firstItem="1cd-nM-KeJ" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="sKH-7r-zjK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OO3-Nr-Xeo" secondAttribute="trailing" id="x9C-gd-o1e"/>
                             <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="xAt-It-lOS"/>
                             <constraint firstItem="uwV-Lq-8at" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="100" id="yAg-gA-vz3"/>
                         </constraints>
@@ -388,11 +392,13 @@
                         <outlet property="answer1Button" destination="1DD-47-XZE" id="b2s-IE-6IE"/>
                         <outlet property="answer2Button" destination="Q5u-Pu-vPo" id="QEZ-nb-Aq1"/>
                         <outlet property="answer3Button" destination="ibC-Pl-iHu" id="33C-4k-6aX"/>
+                        <outlet property="constraintView" destination="x9C-gd-o1e" id="tjv-DZ-oLA"/>
                         <outlet property="labelScore" destination="uwV-Lq-8at" id="94c-lo-p5B"/>
                         <outlet property="life1Image" destination="jUL-w0-gUT" id="AuV-8F-RFq"/>
                         <outlet property="life2Image" destination="LSg-Aa-WN0" id="uDL-x6-QXn"/>
                         <outlet property="life3Image" destination="5s5-6p-Hoh" id="tku-mT-ktJ"/>
                         <outlet property="phraseQuestionLabel" destination="Pq8-DX-gGl" id="dgq-yW-OSl"/>
+                        <outlet property="viewTime" destination="OO3-Nr-Xeo" id="16V-ZB-cfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06j-hh-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -545,7 +551,6 @@
         <image name="???" width="209" height="295"/>
         <image name="backgroundGameShow" width="1600" height="900"/>
         <image name="life" width="512" height="512"/>
-        <image name="trophies" width="1224" height="572"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nLn-Ms-HAJ"/>
