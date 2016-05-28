@@ -15,7 +15,7 @@ protocol GameInteractorInput {
     func doSomething()
     func selectAnswer(request: GameScoreRequest)
     func nextQuestion()
-    
+    func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
 }
 
 protocol GameInteractorOutput {
@@ -55,6 +55,15 @@ class GameInteractor: GameInteractorInput {
         }
     }
     
+    func nextQuestion() {
+        worker = GameWorker()
+        worker.nextQuestion { (question, sucess) in
+            var response = GameResponse()
+            response.question = question
+            response.sucess = sucess
+            self.output.presentSomething(response)
+        }
+    }
     func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy) {
         
         workerTrophyManager = TrophyModelManager()
@@ -82,18 +91,6 @@ class GameInteractor: GameInteractorInput {
             
             let response = GameResponse.NoNewTrophy()
             self.output.presentNoNewTrophy(response)
-          
         }
-    }
-    
-    func nextQuestion() {
-        worker = GameWorker()
-        worker.nextQuestion { (question, sucess) in
-            var response = GameResponse()
-            response.question = question
-            response.sucess = sucess
-            self.output.presentSomething(response)
-        }
-         
     }
 }

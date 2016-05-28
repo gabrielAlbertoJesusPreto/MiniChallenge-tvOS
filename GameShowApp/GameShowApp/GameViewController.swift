@@ -26,9 +26,9 @@ protocol GameViewControllerInput {
 
 protocol GameViewControllerOutput {
     func doSomething()
-    func selectAnswer(request: GameScoreRequest)
+    //func selectAnswer(request: GameScoreRequest)
     func nextQuestion()
-    
+    func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
 }
 
 class GameViewController: UIViewController, GameViewControllerInput {
@@ -48,7 +48,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
     var correctPosition = 0
     var level = 0
     var isCorrect = false
-    var currentScoreSinglePlayer = 0
+    // Global Score
+    var score: Int!
     var players: [(String, Int)]?
     var life = 3
     let color = UIColor(netHex: 0x46C6B7, alpha: 1)
@@ -66,10 +67,19 @@ class GameViewController: UIViewController, GameViewControllerInput {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    doSomethingOnLoad()
+    output.doSomething()
     
     activiryIndicator.startAnimating()
-  }
+    
+    //------------------------------------------------------//
+    // ->>> Remove This - Test - Verification New Trophy    //
+    //------------------------------------------------------//
+        score = 0                                       //
+        scoreDidChange()                                    //
+    //------------------------------------------------------//
+    }
+  
+  // MARK: Event handling
     
     override var preferredFocusedView: UIView? {
         return answer0Button
@@ -79,19 +89,26 @@ class GameViewController: UIViewController, GameViewControllerInput {
         let button = sender as? UIButton
         selectButton = button!
         self.verifyCorrectAnswer(sender.tag, button: button!)
+        
+    }
+    
+    // MARK: Output
+  
+    func scoreDidChange() {
+        var request = GameRequest.VerifyNewTRophy()
+        request.score = self.score
+        print("Loading...")
+        output.doVerificationNewTrophy(request)
     }
     
     func verifyCorrectAnswer(tag:Int,button:UIButton) {
         if tag == correctPosition {
             button.backgroundColor = UIColor.greenColor()
             isCorrect = true
-            currentScoreSinglePlayer = currentScoreSinglePlayer + (100*level)
-            
+            score = score! + (100*level)
         } else {
             button.backgroundColor = UIColor.redColor()
-            isCorrect = false
             life -= 1
-            
             if life == 2 {
                 life3Image.hidden = true
             }
@@ -102,27 +119,25 @@ class GameViewController: UIViewController, GameViewControllerInput {
                 life1Image.hidden = true
             }
         }
+        
         if life == 0 {
             var viewModel = GameScoreViewModel()
             viewModel.title = "Fim de Jogo"
-            viewModel.title = "Você marcou \(currentScoreSinglePlayer) pontos"
+            viewModel.title = "Você marcou \(score) pontos"
             self.displayAlertScore(viewModel)
         } else {
-            self.output.nextQuestion()
+                self.output.nextQuestion()
         }
     }
+
     
     // MARK: Protocol
-    func doSomethingOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        output.doSomething()
-    }
     
     func selectAnswer() {
         var request = GameScoreRequest()
         request.level = level
         request.isCorrect = isCorrect
-        output.selectAnswer(request)
+        //output.selectAnswer(request)
     }
     
     func hiddenLife() {
@@ -161,12 +176,10 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.labelScore.hidden = false
             self.hiddenLife()
             self.selectButton.backgroundColor = self.color
-            
-            self.labelScore.text = String(self.currentScoreSinglePlayer)
+            self.labelScore.text = String(self.score)
             self.phraseQuestionLabel.text = viewModel.phraseQuestion
             self.level = viewModel.level!
             self.correctPosition = viewModel.correctPosition!
-            
             self.answer0Button.setTitle(viewModel.answers![0], forState: UIControlState.Normal)
             self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
             self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
@@ -188,9 +201,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
         print("Pronto!!!! - Nenhum Troféu")
     }
         
-        func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
-            
-            
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
             print("Pronto!!!! - Novo Troféu")
             
             let alertController = UIAlertController(title: "Parabéns", message: viewModel.message, preferredStyle: .Alert)
