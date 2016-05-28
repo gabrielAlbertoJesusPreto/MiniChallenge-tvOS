@@ -195,22 +195,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kll-Sw-11U">
-                                <rect key="frame" x="840" y="517" width="241" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="4Zl-hn-tEv"/>
-                                    <constraint firstAttribute="height" constant="46" id="brF-Dg-tH2"/>
-                                </constraints>
+                                <rect key="frame" x="60" y="517" width="1800" height="46"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-jS-lma">
-                                <rect key="frame" x="931" y="460" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="793" y="72" width="334" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtq-KK-w9j">
-                                <rect key="frame" x="896" y="597" width="129" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtq-KK-w9j" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
+                                <rect key="frame" x="699" y="790" width="523" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.60392156860000001" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="F0o-A5-tT9"/>
+                                    <constraint firstAttribute="width" constant="523" id="Ziu-8y-1VN"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Ok"/>
                                 <connections>
@@ -219,14 +220,17 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="kll-Sw-11U" firstAttribute="centerY" secondItem="OLK-Ll-dwc" secondAttribute="centerY" id="2Da-Qm-DQ7"/>
+                            <constraint firstItem="eAl-jS-lma" firstAttribute="centerX" secondItem="U9V-fc-Ink" secondAttribute="centerX" id="2jb-BR-452"/>
+                            <constraint firstItem="kll-Sw-11U" firstAttribute="top" secondItem="eAl-jS-lma" secondAttribute="bottom" constant="325" id="44G-Ef-78P"/>
                             <constraint firstItem="OLK-Ll-dwc" firstAttribute="top" secondItem="SWy-Lg-FXb" secondAttribute="bottom" id="8D6-rO-e0A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OLK-Ll-dwc" secondAttribute="trailing" constant="-20" id="FDt-VJ-mzI"/>
                             <constraint firstItem="me9-rH-NYa" firstAttribute="top" secondItem="OLK-Ll-dwc" secondAttribute="bottom" id="Hdi-L7-pj0"/>
-                            <constraint firstItem="kll-Sw-11U" firstAttribute="top" secondItem="eAl-jS-lma" secondAttribute="bottom" constant="36" id="JwY-gK-cuV"/>
-                            <constraint firstItem="kll-Sw-11U" firstAttribute="centerX" secondItem="OLK-Ll-dwc" secondAttribute="centerX" id="c7P-7T-yRE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kll-Sw-11U" secondAttribute="trailing" constant="40" id="IY9-YQ-eDm"/>
+                            <constraint firstItem="eAl-jS-lma" firstAttribute="top" secondItem="SWy-Lg-FXb" secondAttribute="bottom" constant="72" id="XFW-er-sqc"/>
+                            <constraint firstItem="kll-Sw-11U" firstAttribute="leading" secondItem="U9V-fc-Ink" secondAttribute="leadingMargin" constant="40" id="gXq-Yw-fzi"/>
                             <constraint firstItem="OLK-Ll-dwc" firstAttribute="leading" secondItem="U9V-fc-Ink" secondAttribute="leadingMargin" constant="-20" id="k1d-cL-zCu"/>
-                            <constraint firstItem="eAl-jS-lma" firstAttribute="centerX" secondItem="OLK-Ll-dwc" secondAttribute="centerX" id="qd8-HH-nfR"/>
+                            <constraint firstItem="Vtq-KK-w9j" firstAttribute="centerX" secondItem="U9V-fc-Ink" secondAttribute="centerX" id="pCC-fD-dFd"/>
+                            <constraint firstItem="me9-rH-NYa" firstAttribute="top" secondItem="Vtq-KK-w9j" secondAttribute="bottom" constant="204" id="zM8-XW-fbR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -553,6 +557,6 @@
         <image name="life" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nLn-Ms-HAJ"/>
+        <segue reference="81z-jU-NZe"/>
     </inferredMetricsTieBreakers>
 </document>
