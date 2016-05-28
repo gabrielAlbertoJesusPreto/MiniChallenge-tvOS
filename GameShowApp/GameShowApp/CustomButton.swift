@@ -10,6 +10,13 @@ import UIKit
 
 class CustomButton: UIButton {
     
+    
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+    }
+    
     override func canBecomeFocused() -> Bool {
         return true
     }
@@ -19,13 +26,11 @@ class CustomButton: UIButton {
             coordinator.addCoordinatedAnimations({
                 
                 self.transform = CGAffineTransformMakeScale(1.15, 1.15)
-                self.layer.cornerRadius = 10
             }, completion: nil)
             
         } else if context.previouslyFocusedView == self {
             coordinator.addCoordinatedAnimations({
                 self.transform = CGAffineTransformMakeScale(1, 1)
-                self.layer.cornerRadius = 0
                 }, completion: nil)
         }
     }

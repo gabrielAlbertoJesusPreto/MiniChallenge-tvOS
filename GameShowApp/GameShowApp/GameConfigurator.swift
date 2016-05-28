@@ -56,6 +56,7 @@ class GameConfigurator {
     interactor.output = presenter
     
     viewController.output = interactor
+    
     viewController.router = router
   }
 }

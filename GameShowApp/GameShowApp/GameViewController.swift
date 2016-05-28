@@ -11,6 +11,12 @@
 
 import UIKit
 
+extension UIColor {
+    convenience init(netHex:Int, alpha: CGFloat) {
+        self.init(red:CGFloat((netHex >> 16) & 0xff)/255.0, green:CGFloat((netHex >> 8) & 0xff)/255.0, blue:CGFloat(netHex & 0xff) / 255.0, alpha: alpha)
+    }
+}
+
 protocol GameViewControllerInput {
     func displaySomething(viewModel: GameViewModel)
     func displayAlertScore(viewModel: GameScoreViewModel)
@@ -29,14 +35,23 @@ class GameViewController: UIViewController, GameViewControllerInput {
     @IBOutlet weak var answer1Button: CustomButton!
     @IBOutlet weak var answer2Button: CustomButton!
     @IBOutlet weak var answer3Button: CustomButton!
-    
+    @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var activiryIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var life3Image: UIImageView!
+    @IBOutlet weak var life2Image: UIImageView!
+    @IBOutlet weak var life1Image: UIImageView!
+    
     var output: GameViewControllerOutput!
     var router: GameRouter!
     var correctPosition = 0
     var level = 0
     var isCorrect = false
+    var currentScoreSinglePlayer = 0
     var players: [(String, Int)]?
+    var life = 3
+    let color = UIColor(netHex: 0x46C6B7, alpha: 1)
+    var selectButton = UIButton()
+
   
   // MARK: Object lifecycle
   
@@ -50,11 +65,17 @@ class GameViewController: UIViewController, GameViewControllerInput {
   override func viewDidLoad() {
     super.viewDidLoad()
     doSomethingOnLoad()
+    
     activiryIndicator.startAnimating()
   }
     
+    override var preferredFocusedView: UIView? {
+        return answer0Button
+    }
+    
     @IBAction func selectAnswer(sender: AnyObject) {
         let button = sender as? UIButton
+        selectButton = button!
         self.verifyCorrectAnswer(sender.tag, button: button!)
     }
     
@@ -63,14 +84,31 @@ class GameViewController: UIViewController, GameViewControllerInput {
         if tag == correctPosition {
             button.backgroundColor = UIColor.greenColor()
             isCorrect = true
+            currentScoreSinglePlayer = currentScoreSinglePlayer + (100*level)
             
         } else {
             button.backgroundColor = UIColor.redColor()
             isCorrect = false
+            life -= 1
+            
+            if life == 2 {
+                life3Image.hidden = true
+            }
+            if life == 1 {
+                life2Image.hidden = true
+            }
+            if life == 0 {
+                life1Image.hidden = true
+            }
         }
-        output.nextQuestion()
-        //self.selectAnswer()
-        
+        if life == 0 {
+            var viewModel = GameScoreViewModel()
+            viewModel.title = "Fim de Jogo"
+            viewModel.title = "Você marcou \(currentScoreSinglePlayer) pontos"
+            self.displayAlertScore(viewModel)
+        } else {
+            self.output.nextQuestion()
+        }
     }
     
     // MARK: Protocol
@@ -86,18 +124,44 @@ class GameViewController: UIViewController, GameViewControllerInput {
         output.selectAnswer(request)
     }
     
+    func hiddenLife() {
+        if life == 3 {
+            self.life1Image.hidden = false
+            self.life2Image.hidden = false
+            self.life3Image.hidden = false
+        } else if life == 2 {
+            self.life1Image.hidden = false
+            self.life2Image.hidden = false
+            self.life3Image.hidden = true
+        } else if life == 1 {
+            self.life1Image.hidden = false
+            self.life2Image.hidden = true
+            self.life3Image.hidden = true
+        } else {
+            self.life1Image.hidden = true
+            self.life2Image.hidden = true
+            self.life3Image.hidden = true
+        }
+        
+        
+    }
     
     // MARK: Display logic
-    
     func displaySomething(viewModel: GameViewModel) {
-        activiryIndicator.stopAnimating()
-        activiryIndicator.hidden = true
-        phraseQuestionLabel.hidden = false
-        answer0Button.hidden = false
-        answer1Button.hidden = false
-        answer2Button.hidden = false
-        answer3Button.hidden = false
         dispatch_async(dispatch_get_main_queue()) {
+            self.answer0Button.setNeedsFocusUpdate()
+            self.activiryIndicator.stopAnimating()
+            self.activiryIndicator.hidden = true
+            self.phraseQuestionLabel.hidden = false
+            self.answer0Button.hidden = false
+            self.answer1Button.hidden = false
+            self.answer2Button.hidden = false
+            self.answer3Button.hidden = false
+            self.labelScore.hidden = false
+            self.hiddenLife()
+            self.selectButton.backgroundColor = self.color
+            
+            self.labelScore.text = String(self.currentScoreSinglePlayer)
             self.phraseQuestionLabel.text = viewModel.phraseQuestion
             self.level = viewModel.level!
             self.correctPosition = viewModel.correctPosition!
@@ -111,9 +175,14 @@ class GameViewController: UIViewController, GameViewControllerInput {
     
     func displayAlertScore(viewModel: GameScoreViewModel) {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) in
+            self.navigationController?.popToRootViewControllerAnimated(true)           
+        }))
+        
         self.presentViewController(alert, animated: true, completion: nil)
         
     }
 }
+
+
 
