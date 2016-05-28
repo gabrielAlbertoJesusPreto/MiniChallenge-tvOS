@@ -14,11 +14,15 @@ import UIKit
 protocol GamePresenterInput {
     func presentSomething(response: GameResponse)
     func presentScore(response: GameScoreResponse)
+    func presentNewTrophy(response: GameResponse.NewTrophy)
+    func presentNoNewTrophy(response: GameResponse.NoNewTrophy)
 }
 
 protocol GamePresenterOutput: class {
-  func displaySomething(viewModel: GameViewModel)
+    func displaySomething(viewModel: GameViewModel)
     func displayAlertScore(viewModel: GameScoreViewModel)
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy)
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy)
 }
 
 extension CollectionType {
@@ -95,5 +99,36 @@ class GamePresenter: GamePresenterInput {
         viewModel.textAlert = textAlert
         viewModel.title = title
         output.displayAlertScore(viewModel)
+    }
+    
+    func presentNewTrophy(response: GameResponse.NewTrophy) {
+        
+        var viewModel = GameViewModel.NewTrophy()
+        viewModel.trophies = response.trophies
+        
+        if viewModel.trophies.count == 1 {
+            viewModel.message = "Você Ganhou o troféu de \(viewModel.trophies[0].score!) pontos!"
+        } else {
+            viewModel.trophies.sortInPlace({ $0.score < $1.score })
+            var trophiesString = ""
+            for item in viewModel.trophies {
+                
+                trophiesString += "  -\(item.score!) pontos \n"
+                
+            }
+            
+            viewModel.message = "Você Ganhou os seguintes troféus: \n \(trophiesString)"
+            
+        }
+        
+        output.displayNewTrophies(viewModel)
+        
+    }
+    
+    func presentNoNewTrophy(response: GameResponse.NoNewTrophy) {
+        
+        let viewModel = GameViewModel.NoNewTrophy()
+        output.displayNoNewTrophy(viewModel)
+        
     }
 }

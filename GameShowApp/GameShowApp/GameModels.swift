@@ -12,18 +12,37 @@
 import UIKit
 
 
+struct GameRequest {
+    struct VerifyNewTRophy {
+        var score: Int?
+    }
+}
+
 struct GameResponse {
+    struct NewTrophy {
+        var trophies = [TrophyEntity]()
+    }
+    struct NoNewTrophy {
+        var result = true
+    }
     var question:Question?
     var sucess:Bool?
 }
 
 struct GameViewModel {
+    struct NewTrophy {
+        var trophies = [TrophyEntity]()
+        var message: String!
+    }
+    struct NoNewTrophy {
+        var result = true
+    }
+
     var answers:[String]?
     var correctPosition:Int?
     var phraseQuestion:String?
     var level:Int?
 }
-
 struct GameScoreRequest {
     var level:Int?
     var isCorrect:Bool?

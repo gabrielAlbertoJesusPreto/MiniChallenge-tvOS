@@ -20,6 +20,8 @@ extension UIColor {
 protocol GameViewControllerInput {
     func displaySomething(viewModel: GameViewModel)
     func displayAlertScore(viewModel: GameScoreViewModel)
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy)
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy)
 }
 
 protocol GameViewControllerOutput {
@@ -80,7 +82,6 @@ class GameViewController: UIViewController, GameViewControllerInput {
     }
     
     func verifyCorrectAnswer(tag:Int,button:UIButton) {
-        
         if tag == correctPosition {
             button.backgroundColor = UIColor.greenColor()
             isCorrect = true
@@ -170,6 +171,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.answer1Button.setTitle(viewModel.answers![1], forState: UIControlState.Normal)
             self.answer2Button.setTitle(viewModel.answers![2], forState: UIControlState.Normal)
             self.answer3Button.setTitle(viewModel.answers![3], forState: UIControlState.Normal)
+            
         }
     }
     
@@ -180,8 +182,24 @@ class GameViewController: UIViewController, GameViewControllerInput {
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
-        
     }
+    
+    func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy) {
+        print("Pronto!!!! - Nenhum Troféu")
+    }
+        
+        func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
+            
+            
+            print("Pronto!!!! - Novo Troféu")
+            
+            let alertController = UIAlertController(title: "Parabéns", message: viewModel.message, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK, Entendi", style: .Default, handler: nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true
+                , completion: nil)
+            
+        }
 }
 
 
