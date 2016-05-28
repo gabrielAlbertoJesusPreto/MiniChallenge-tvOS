@@ -21,7 +21,6 @@
 		113A01C21CF3461A00D61B0D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01C11CF3461A00D61B0D /* Answer.swift */; };
 		113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBB091CF49BA900E75280 /* GameScoreWorker.swift */; };
 		11473AD81CF32DEA00842975 /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */; };
-		11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473AD91CF32E3700842975 /* TrophyViewController.swift */; };
 		11473ADC1CF32E5800842975 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11473ADB1CF32E5800842975 /* ModelManager.swift */; };
 		1192EB9E1CE9FB1800A3C7BA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1192EB9D1CE9FB1800A3C7BA /* CloudKit.framework */; };
 		5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */; };
@@ -33,8 +32,9 @@
 		5E2DC4D81CF5E20700928843 /* TrophyModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2DC4D71CF5E20700928843 /* TrophyModelManager.swift */; };
 		5E2DC4DA1CF5E27100928843 /* TrophyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2DC4D91CF5E27100928843 /* TrophyManager.swift */; };
 		5E2DC4DC1CF5E2C700928843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */; };
+		5EDA916A1CFA0C5F00BC6EC7 /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA91631CFA0C5F00BC6EC7 /* TrophyViewController.swift */; };
+		5EDA916D1CFA0C9800BC6EC7 /* TrophyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA916C1CFA0C9800BC6EC7 /* TrophyCollectionViewCell.swift */; };
 		EC97DE051CF47FC200C4F63F /* ChooseUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */; };
-		EC97DE071CF5D94700C4F63F /* TrophyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		113A01C11CF3461A00D61B0D /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		113BBB091CF49BA900E75280 /* GameScoreWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScoreWorker.swift; sourceTree = "<group>"; };
 		11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
-		11473AD91CF32E3700842975 /* TrophyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
 		11473ADB1CF32E5800842975 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		1192EB9C1CE9FB1200A3C7BA /* GameShowApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GameShowApp.entitlements; sourceTree = "<group>"; };
 		1192EB9D1CE9FB1800A3C7BA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -65,8 +64,9 @@
 		5E2DC4D71CF5E20700928843 /* TrophyModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyModelManager.swift; sourceTree = "<group>"; };
 		5E2DC4D91CF5E27100928843 /* TrophyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyManager.swift; sourceTree = "<group>"; };
 		5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EDA91631CFA0C5F00BC6EC7 /* TrophyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
+		5EDA916C1CFA0C9800BC6EC7 /* TrophyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUsernameViewController.swift; sourceTree = "<group>"; };
-		EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +139,7 @@
 				113A01AF1CF3365A00D61B0D /* CoreData */,
 				113A01A61CF3309200D61B0D /* ModelManager */,
 				11473AD61CF32CF400842975 /* Game */,
+				5EDA915D1CFA0C1C00BC6EC7 /* TrophiesScene */,
 				1192EB9C1CE9FB1200A3C7BA /* GameShowApp.entitlements */,
 				5E098F2A1CE3592E00F939A5 /* AppDelegate.swift */,
 				5E098F2C1CE3592E00F939A5 /* MainViewController.swift */,
@@ -146,14 +147,21 @@
 				5E098F311CE3592E00F939A5 /* Main.storyboard */,
 				5E2DC4DB1CF5E2C700928843 /* Assets.xcassets */,
 				EC97DE041CF47FC200C4F63F /* ChooseUsernameViewController.swift */,
-				EC97DE061CF5D94700C4F63F /* TrophyCollectionViewCell.swift */,
-				11473AD91CF32E3700842975 /* TrophyViewController.swift */,
 				11473AD71CF32DEA00842975 /* SelectPlayerViewController.swift */,
 				113A01BF1CF3460A00D61B0D /* Question.swift */,
 				113A01C11CF3461A00D61B0D /* Answer.swift */,
 				5E2DC4D51CF5E1AA00928843 /* TrophyEntity.swift */,
 			);
 			path = GameShowApp;
+			sourceTree = "<group>";
+		};
+		5EDA915D1CFA0C1C00BC6EC7 /* TrophiesScene */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA91631CFA0C5F00BC6EC7 /* TrophyViewController.swift */,
+				5EDA916C1CFA0C9800BC6EC7 /* TrophyCollectionViewCell.swift */,
+			);
+			name = TrophiesScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +245,7 @@
 				113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */,
 				113A01B81CF3381F00D61B0D /* GameConfigurator.swift in Sources */,
 				5E2DC4D61CF5E1AA00928843 /* TrophyEntity.swift in Sources */,
+				5EDA916A1CFA0C5F00BC6EC7 /* TrophyViewController.swift in Sources */,
 				113A01C21CF3461A00D61B0D /* Answer.swift in Sources */,
 				113A01C01CF3460A00D61B0D /* Question.swift in Sources */,
 				113A01B91CF3381F00D61B0D /* GameInteractor.swift in Sources */,
@@ -244,8 +253,8 @@
 				113A01BD1CF3381F00D61B0D /* GameViewController.swift in Sources */,
 				5E2DC4D81CF5E20700928843 /* TrophyModelManager.swift in Sources */,
 				113A01BC1CF3381F00D61B0D /* GameRouter.swift in Sources */,
+				5EDA916D1CFA0C9800BC6EC7 /* TrophyCollectionViewCell.swift in Sources */,
 				5E098F301CE3592E00F939A5 /* GameShowApp.xcdatamodeld in Sources */,
-				EC97DE071CF5D94700C4F63F /* TrophyCollectionViewCell.swift in Sources */,
 				113A01BE1CF3381F00D61B0D /* GameWorker.swift in Sources */,
 				5E098F2D1CE3592E00F939A5 /* MainViewController.swift in Sources */,
 				113A01BB1CF3381F00D61B0D /* GamePresenter.swift in Sources */,
@@ -254,7 +263,6 @@
 				5E098F2B1CE3592E00F939A5 /* AppDelegate.swift in Sources */,
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */,
-				11473ADA1CF32E3700842975 /* TrophyViewController.swift in Sources */,
 				5E2DC4DA1CF5E27100928843 /* TrophyManager.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);
