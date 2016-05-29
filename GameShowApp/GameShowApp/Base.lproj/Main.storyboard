@@ -60,7 +60,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Começar"/>
                                 <connections>
-                                    <segue destination="l0T-MW-uAK" kind="show" id="wrq-23-YHL"/>
+                                    <segue destination="A6L-A4-pHi" kind="show" id="zEW-4K-gH4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -566,6 +566,6 @@
         <image name="life" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="81z-jU-NZe"/>
+        <segue reference="zEW-4K-gH4"/>
     </inferredMetricsTieBreakers>
 </document>
