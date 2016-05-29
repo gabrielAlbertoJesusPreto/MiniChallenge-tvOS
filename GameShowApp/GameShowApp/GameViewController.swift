@@ -85,12 +85,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
         outDoSomething()
         activiryIndicator.hidden = false
         activiryIndicator.startAnimating()
-        //------------------------------------------------------//
-        // ->>> Remove This - Test - Verification New Trophy    //
-        //------------------------------------------------------//
-        score = 0                                       //
-        scoreDidChange()                                    //
-        //------------------------------------------------------//
+        
+        score = 0
         
     }
    
@@ -139,6 +135,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
             button.backgroundColor = UIColor.greenColor()
             isCorrect = true
             score = score! + (100*level)
+            scoreDidChange()
         } else {
             button.backgroundColor = UIColor.redColor()
             life -= 1
