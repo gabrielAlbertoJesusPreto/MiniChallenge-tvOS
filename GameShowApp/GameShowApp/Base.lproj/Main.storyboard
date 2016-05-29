@@ -321,7 +321,7 @@
                                     <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="LKm-gx-2vk"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-qc-4L5">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-qc-4L5">
                                 <rect key="frame" x="928" y="508" width="64" height="64"/>
                             </activityIndicatorView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwV-Lq-8at">
@@ -358,6 +358,12 @@
                                     <constraint firstAttribute="height" constant="10" id="etN-2I-5A6"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelPlayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-jp-jbo">
+                                <rect key="frame" x="841" y="68" width="239" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="OO3-Nr-Xeo" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="0lp-Vd-0m6"/>
@@ -373,9 +379,11 @@
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="Xvu-99-6zZ" secondAttribute="bottom" id="FJg-pQ-spl"/>
                             <constraint firstItem="OO3-Nr-Xeo" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="29" id="G5I-Ed-StE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
+                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="CwJ-jp-jbo" secondAttribute="bottom" constant="72" id="Inf-WC-11R"/>
                             <constraint firstItem="5s5-6p-Hoh" firstAttribute="leading" secondItem="LSg-Aa-WN0" secondAttribute="trailing" constant="15" id="OKR-2c-WfV"/>
                             <constraint firstItem="jUL-w0-gUT" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="107" id="QdC-rk-sUg"/>
                             <constraint firstItem="ibC-Pl-iHu" firstAttribute="top" secondItem="Q5u-Pu-vPo" secondAttribute="bottom" constant="82" id="RUe-MK-lfp"/>
+                            <constraint firstItem="CwJ-jp-jbo" firstAttribute="centerX" secondItem="ZrL-TM-Fkb" secondAttribute="centerX" id="UFx-eD-ea9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ibC-Pl-iHu" secondAttribute="trailing" constant="170" id="VhY-9K-df1"/>
                             <constraint firstItem="ZiE-qc-4L5" firstAttribute="centerX" secondItem="ZrL-TM-Fkb" secondAttribute="centerX" id="ZoU-ic-UV0"/>
                             <constraint firstItem="1DD-47-XZE" firstAttribute="top" secondItem="5Js-Ha-2wf" secondAttribute="bottom" constant="82" id="axl-T1-bRd"/>
@@ -397,6 +405,7 @@
                         <outlet property="answer2Button" destination="Q5u-Pu-vPo" id="QEZ-nb-Aq1"/>
                         <outlet property="answer3Button" destination="ibC-Pl-iHu" id="33C-4k-6aX"/>
                         <outlet property="constraintView" destination="x9C-gd-o1e" id="tjv-DZ-oLA"/>
+                        <outlet property="labelPlayer" destination="CwJ-jp-jbo" id="eE7-T6-ISH"/>
                         <outlet property="labelScore" destination="uwV-Lq-8at" id="94c-lo-p5B"/>
                         <outlet property="life1Image" destination="jUL-w0-gUT" id="AuV-8F-RFq"/>
                         <outlet property="life2Image" destination="LSg-Aa-WN0" id="uDL-x6-QXn"/>
