@@ -46,6 +46,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
     @IBOutlet weak var viewTime: UIView!
     @IBOutlet weak var constraintView: NSLayoutConstraint!
     
+    @IBOutlet weak var labelPlayer: UILabel!
     var output: GameViewControllerOutput!
     var router: GameRouter!
     var correctPosition = 0
@@ -74,18 +75,26 @@ class GameViewController: UIViewController, GameViewControllerInput {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    outDoSomething()
     aux = self.viewTime.frame.width
-    
-    activiryIndicator.startAnimating()
-    
-    //------------------------------------------------------//
-    // ->>> Remove This - Test - Verification New Trophy    //
-    //------------------------------------------------------//
+    if players != nil {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.displayMultiplayer()
+        }
+       
+    } else {
+        outDoSomething()
+        activiryIndicator.hidden = false
+        activiryIndicator.startAnimating()
+        //------------------------------------------------------//
+        // ->>> Remove This - Test - Verification New Trophy    //
+        //------------------------------------------------------//
         score = 0                                       //
-        //scoreDidChange()                                    //
-    //------------------------------------------------------//
+        scoreDidChange()                                    //
+        //------------------------------------------------------//
+        
     }
+   
+}
   
     func outDoSomething() {
         output.doSomething()
@@ -136,14 +145,17 @@ class GameViewController: UIViewController, GameViewControllerInput {
             self.updateLife()
             
         }
-        
-        if life == 0 {
-            var viewModel = GameScoreViewModel()
-            viewModel.title = "Fim de Jogo"
-            viewModel.title = "Você marcou \(score) pontos"
-            self.displayAlertScore(viewModel)
-        } else {
+        if players == nil {
+            if life == 0 {
+                var viewModel = GameScoreViewModel()
+                viewModel.title = "Fim de Jogo"
+                viewModel.title = "Você marcou \(score) pontos"
+                self.displayAlertScore(viewModel)
+            } else {
                 self.output.nextQuestion()
+            }
+        } else {
+            self.output.nextQuestion()
         }
     }
     
@@ -159,25 +171,25 @@ class GameViewController: UIViewController, GameViewControllerInput {
     }
     
     func updateLife() {
-        if life == 3 {
-            self.life1Image.hidden = false
-            self.life2Image.hidden = false
-            self.life3Image.hidden = false
-        } else if life == 2 {
-            self.life1Image.hidden = false
-            self.life2Image.hidden = false
-            self.life3Image.hidden = true
-        } else if life == 1 {
-            self.life1Image.hidden = false
-            self.life2Image.hidden = true
-            self.life3Image.hidden = true
-        } else {
-            self.life1Image.hidden = true
-            self.life2Image.hidden = true
-            self.life3Image.hidden = true
+        if players == nil {
+            if life == 3 {
+                self.life1Image.hidden = false
+                self.life2Image.hidden = false
+                self.life3Image.hidden = false
+            } else if life == 2 {
+                self.life1Image.hidden = false
+                self.life2Image.hidden = false
+                self.life3Image.hidden = true
+            } else if life == 1 {
+                self.life1Image.hidden = false
+                self.life2Image.hidden = true
+                self.life3Image.hidden = true
+            } else {
+                self.life1Image.hidden = true
+                self.life2Image.hidden = true
+                self.life3Image.hidden = true
+            }
         }
-        
-        
     }
     
     // MARK: Display logic
@@ -212,8 +224,9 @@ class GameViewController: UIViewController, GameViewControllerInput {
     func displayAlertScore(viewModel: GameScoreViewModel) {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.textAlert, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) in
-            self.navigationController?.popToRootViewControllerAnimated(true)           
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }))
+        
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -230,8 +243,25 @@ class GameViewController: UIViewController, GameViewControllerInput {
             alertController.addAction(action)
             self.presentViewController(alertController, animated: true
                 , completion: nil)
-            
         }
+    
+    func displayMultiplayer() {
+        let alert = UIAlertController(title: "Meta", message: "Consiga 2000 para ganhar", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) in
+            self.outDoSomething()
+            self.activiryIndicator.hidden = false
+            self.activiryIndicator.startAnimating()
+            //------------------------------------------------------//
+            // ->>> Remove This - Test - Verification New Trophy    //
+            //------------------------------------------------------//
+            self.score = 0                                       
+            //
+            //------------------------------------------------------//
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
 }
 
 
