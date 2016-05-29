@@ -19,10 +19,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         startButton.updateFocusIfNeeded()
         startButton.setNeedsFocusUpdate()
-        
-        TrophyModelManager.sharedInstance.getTrophyByScore(2000) { (trophies) in
-            print(trophies)
-        }
     }
 
     override func didReceiveMemoryWarning() {

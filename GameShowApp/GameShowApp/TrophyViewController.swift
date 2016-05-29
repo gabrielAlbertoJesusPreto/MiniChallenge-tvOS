@@ -32,21 +32,20 @@ class TrophyViewController: UIViewController {
         self.activityIndicator.startAnimating()
         self.collectionView.hidden = true
         
-
+        self.userTrophies = self.getUserTrophies()
         self.numberOfTrophiesOnCloud()
         
     }
     
     func numberOfTrophiesOnCloud() {
         
-         TrophyModelManager().getTrophies { (trophies) in
+        TrophyModelManager().getTrophies { (trophies) in
             
             self.activityBackgroundView.hidden = true
             self.activityIndicator.stopAnimating()
             self.collectionView.hidden = false
             
             self.numberOfItems = trophies.count
-            self.userTrophies = self.getUserTrophies()
             self.collectionView.reloadData()
             
         }
