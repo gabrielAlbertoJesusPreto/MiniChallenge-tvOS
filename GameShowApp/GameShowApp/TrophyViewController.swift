@@ -16,7 +16,6 @@ class TrophyViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var activityBackgroundView: UIView!
     
     var numberOfItems: Int = 0
     var userTrophies = [TrophyEntity]()
@@ -24,11 +23,8 @@ class TrophyViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-    
             
-        self.activityBackgroundView.hidden = false
+        self.activityIndicator.hidden = false
         self.activityIndicator.startAnimating()
         self.collectionView.hidden = true
         
@@ -38,18 +34,17 @@ class TrophyViewController: UIViewController {
     }
     
     func numberOfTrophiesOnCloud() {
-        
         TrophyModelManager().getTrophies { (trophies) in
             
-            self.activityBackgroundView.hidden = true
-            self.activityIndicator.stopAnimating()
-            self.collectionView.hidden = false
-            
-            self.numberOfItems = trophies.count
-            self.collectionView.reloadData()
-            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.activityIndicator.hidden = true
+                self.activityIndicator.stopAnimating()
+                self.collectionView.hidden = false
+                
+                self.numberOfItems = trophies.count
+                self.collectionView.reloadData()
+            })
         }
-        
     }
     
     func getUserTrophies() -> [TrophyEntity] {
@@ -108,7 +103,6 @@ extension TrophyViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.updateFocusIfNeeded()
             cell.setNeedsFocusUpdate()
         }
-        
         
         if indexPath.row <= userTrophies.count-1 {
             cell.trophyLabel.text = "\(userTrophies[indexPath.row].score!) pontos"

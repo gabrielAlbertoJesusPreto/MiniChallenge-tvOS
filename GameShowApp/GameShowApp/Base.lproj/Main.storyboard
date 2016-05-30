@@ -45,8 +45,8 @@
                                     <segue destination="ZJC-cf-7RM" kind="show" id="NGw-XX-edW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TESTFLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-tj-4u5">
-                                <rect key="frame" x="388" y="214" width="1144" height="274"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPER QUIZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-tj-4u5">
+                                <rect key="frame" x="384" y="214" width="1153" height="274"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="OAV-nZ-2eS"/>
                                 </constraints>
@@ -497,52 +497,18 @@
                                     <outlet property="delegate" destination="ZJC-cf-7RM" id="bjf-cV-stz"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfj-d3-Ov0">
-                                <rect key="frame" x="860" y="440" width="200" height="200"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jZa-hs-OUh">
-                                        <rect key="frame" x="68" y="38" width="64" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="86o-3s-FGj"/>
-                                            <constraint firstAttribute="width" constant="64" id="z9S-TR-7UR"/>
-                                        </constraints>
-                                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carregando conquistas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-VI-Vhx">
-                                        <rect key="frame" x="10" y="126" width="179" height="66"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="U1O-a7-jBh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="2BZ-pc-S51"/>
-                                    <constraint firstItem="Sgh-VI-Vhx" firstAttribute="leading" secondItem="lfj-d3-Ov0" secondAttribute="leading" constant="10" id="2Hg-Dr-fJX"/>
-                                    <constraint firstItem="jZa-hs-OUh" firstAttribute="top" secondItem="lfj-d3-Ov0" secondAttribute="top" constant="38" id="Mtu-5R-klj"/>
-                                    <constraint firstItem="jZa-hs-OUh" firstAttribute="centerX" secondItem="lfj-d3-Ov0" secondAttribute="centerX" id="imT-OL-fkk"/>
-                                    <constraint firstAttribute="bottom" secondItem="Sgh-VI-Vhx" secondAttribute="bottom" constant="8" id="s2m-KC-OWr"/>
-                                    <constraint firstAttribute="width" constant="200" id="w3o-EH-XeL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sgh-VI-Vhx" secondAttribute="trailing" constant="11" id="zgQ-e6-9xL"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-hH-RVG">
+                                <rect key="frame" x="928" y="508" width="64" height="64"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lfj-d3-Ov0" firstAttribute="centerX" secondItem="wK2-Hz-GBu" secondAttribute="centerX" id="6BT-YX-LGa"/>
                             <constraint firstItem="Oo4-7c-Dpn" firstAttribute="top" secondItem="Lcl-ct-mUb" secondAttribute="bottom" id="BSQ-uV-lke"/>
                             <constraint firstItem="Oo4-7c-Dpn" firstAttribute="leading" secondItem="wK2-Hz-GBu" secondAttribute="leadingMargin" constant="-20" id="GOI-VS-kbM"/>
-                            <constraint firstItem="lfj-d3-Ov0" firstAttribute="centerY" secondItem="wK2-Hz-GBu" secondAttribute="centerY" id="HKj-Gv-jgJ"/>
+                            <constraint firstItem="y8P-hH-RVG" firstAttribute="centerX" secondItem="wK2-Hz-GBu" secondAttribute="centerX" id="OPc-g5-gJq"/>
                             <constraint firstItem="Dee-9T-jZ6" firstAttribute="centerX" secondItem="Oo4-7c-Dpn" secondAttribute="centerX" id="W4r-QX-S8O"/>
                             <constraint firstItem="ica-AD-MVi" firstAttribute="top" secondItem="Lcl-ct-mUb" secondAttribute="bottom" constant="71" id="YtP-lS-RmW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ica-AD-MVi" secondAttribute="trailing" constant="483" id="ZDE-Ig-cSf"/>
+                            <constraint firstItem="y8P-hH-RVG" firstAttribute="centerY" secondItem="wK2-Hz-GBu" secondAttribute="centerY" id="Zy1-76-7pU"/>
                             <constraint firstItem="ica-AD-MVi" firstAttribute="leading" secondItem="wK2-Hz-GBu" secondAttribute="leadingMargin" constant="484" id="d9N-tL-ztD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oo4-7c-Dpn" secondAttribute="trailing" constant="-20" id="iWO-NR-HJw"/>
                             <constraint firstItem="85d-4d-xcR" firstAttribute="top" secondItem="Oo4-7c-Dpn" secondAttribute="bottom" id="rgf-kn-UU1"/>
@@ -550,8 +516,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityBackgroundView" destination="lfj-d3-Ov0" id="fUs-3z-I3p"/>
-                        <outlet property="activityIndicator" destination="jZa-hs-OUh" id="SBq-if-j35"/>
+                        <outlet property="activityIndicator" destination="y8P-hH-RVG" id="mIC-Ac-PV4"/>
                         <outlet property="collectionView" destination="Dee-9T-jZ6" id="1IC-0H-m5l"/>
                     </connections>
                 </viewController>

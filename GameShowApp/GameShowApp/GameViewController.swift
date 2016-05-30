@@ -62,40 +62,32 @@ class GameViewController: UIViewController, GameViewControllerInput {
     //Time
     var timmer = NSTimer()
     var aux:CGFloat!
-
-  
-  // MARK: Object lifecycle
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    GameConfigurator.sharedInstance.configure(self)
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    aux = self.viewTime.frame.width
-    if players != nil {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.displayMultiplayer()
-        }
-       
-    } else {
+    
+    
+    // MARK: Object lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        GameConfigurator.sharedInstance.configure(self)
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        aux = self.viewTime.frame.width
+        
         outDoSomething()
         activiryIndicator.hidden = false
         activiryIndicator.startAnimating()
         
         score = 0
-        
     }
-   
-}
-  
+    
     func outDoSomething() {
         output.doSomething()
     }
-  // MARK: Event handling
+    // MARK: Event handling
     
     override var preferredFocusedView: UIView? {
         return answer0Button
@@ -122,7 +114,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
     }
     
     // MARK: Output
-  
+    
     func scoreDidChange() {
         var request = GameRequest.VerifyNewTRophy()
         request.score = self.score
@@ -156,7 +148,7 @@ class GameViewController: UIViewController, GameViewControllerInput {
         }
     }
     
-
+    
     
     // MARK: Protocol
     
@@ -231,33 +223,15 @@ class GameViewController: UIViewController, GameViewControllerInput {
     func displayNoNewTrophy(viewModel: GameViewModel.NoNewTrophy) {
         print("Pronto!!!! - Nenhum Troféu")
     }
-        
-    func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
-            print("Pronto!!!! - Novo Troféu")
-            
-            let alertController = UIAlertController(title: "Parabéns", message: viewModel.message, preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK, Entendi", style: .Default, handler: nil)
-            alertController.addAction(action)
-            self.presentViewController(alertController, animated: true
-                , completion: nil)
-        }
     
-    func displayMultiplayer() {
-        let alert = UIAlertController(title: "Meta", message: "Consiga 2000 para ganhar", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) in
-            self.outDoSomething()
-            self.activiryIndicator.hidden = false
-            self.activiryIndicator.startAnimating()
-            //------------------------------------------------------//
-            // ->>> Remove This - Test - Verification New Trophy    //
-            //------------------------------------------------------//
-            self.score = 0                                       
-            //
-            //------------------------------------------------------//
-        }))
+    func displayNewTrophies(viewModel: GameViewModel.NewTrophy) {
+        print("Pronto!!!! - Novo Troféu")
         
-        self.presentViewController(alert, animated: true, completion: nil)
-
+        let alertController = UIAlertController(title: "Parabéns", message: viewModel.message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK, Entendi", style: .Default, handler: nil)
+        alertController.addAction(action)
+        self.presentViewController(alertController, animated: true
+            , completion: nil)
     }
 }
 
