@@ -39,6 +39,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTb-TY-G3s" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="699" y="802" width="523" height="86"/>
                                 <color key="backgroundColor" red="1" green="0.6023905873298645" blue="0.03817952424287796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Conquistas"/>
                                 <connections>
@@ -57,6 +58,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-lS-AkQ" customClass="CustomButton" customModule="GameShowApp" customModuleProvider="target">
                                 <rect key="frame" x="699" y="692" width="523" height="86"/>
                                 <color key="backgroundColor" red="1" green="0.29537630081176758" blue="0.22452422976493835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Começar"/>
                                 <connections>
@@ -265,6 +267,7 @@
                                     <constraint firstAttribute="width" constant="632" id="czh-il-CBq"/>
                                     <constraint firstAttribute="height" constant="161" id="s6b-K6-JxN"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="buttonAnswer1"/>
                                 <connections>
@@ -278,6 +281,7 @@
                                     <constraint firstAttribute="width" constant="632" id="0jV-rh-i05"/>
                                     <constraint firstAttribute="height" constant="161" id="e47-4w-1lt"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="buttonAnswer0"/>
                                 <userDefinedRuntimeAttributes>
@@ -296,6 +300,7 @@
                                     <constraint firstAttribute="width" constant="632" id="9J0-1q-FJ9"/>
                                     <constraint firstAttribute="height" constant="161" id="JzC-op-UnZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="buttonAnswer2"/>
                                 <connections>
@@ -303,8 +308,8 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelQuestion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
-                                <rect key="frame" x="20" y="200" width="1880" height="120"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <rect key="frame" x="20" y="200" width="1880" height="137"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -315,6 +320,7 @@
                                     <constraint firstAttribute="height" constant="161" id="5kk-nB-eXX"/>
                                     <constraint firstAttribute="width" constant="632" id="h2o-O9-6g3"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="buttonAnswer3"/>
                                 <connections>
@@ -434,8 +440,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONQUISTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ica-AD-MVi">
-                                <rect key="frame" x="504" y="71" width="913" height="180"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <rect key="frame" x="504" y="71" width="986" height="205"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="150"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -507,12 +513,12 @@
                             <constraint firstItem="y8P-hH-RVG" firstAttribute="centerX" secondItem="wK2-Hz-GBu" secondAttribute="centerX" id="OPc-g5-gJq"/>
                             <constraint firstItem="Dee-9T-jZ6" firstAttribute="centerX" secondItem="Oo4-7c-Dpn" secondAttribute="centerX" id="W4r-QX-S8O"/>
                             <constraint firstItem="ica-AD-MVi" firstAttribute="top" secondItem="Lcl-ct-mUb" secondAttribute="bottom" constant="71" id="YtP-lS-RmW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ica-AD-MVi" secondAttribute="trailing" constant="483" id="ZDE-Ig-cSf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ica-AD-MVi" secondAttribute="trailing" constant="410" id="ZDE-Ig-cSf"/>
                             <constraint firstItem="y8P-hH-RVG" firstAttribute="centerY" secondItem="wK2-Hz-GBu" secondAttribute="centerY" id="Zy1-76-7pU"/>
                             <constraint firstItem="ica-AD-MVi" firstAttribute="leading" secondItem="wK2-Hz-GBu" secondAttribute="leadingMargin" constant="484" id="d9N-tL-ztD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oo4-7c-Dpn" secondAttribute="trailing" constant="-20" id="iWO-NR-HJw"/>
                             <constraint firstItem="85d-4d-xcR" firstAttribute="top" secondItem="Oo4-7c-Dpn" secondAttribute="bottom" id="rgf-kn-UU1"/>
-                            <constraint firstItem="Dee-9T-jZ6" firstAttribute="top" secondItem="ica-AD-MVi" secondAttribute="bottom" constant="28" id="wL9-Be-ylY"/>
+                            <constraint firstItem="Dee-9T-jZ6" firstAttribute="top" secondItem="ica-AD-MVi" secondAttribute="bottom" constant="3" id="wL9-Be-ylY"/>
                         </constraints>
                     </view>
                     <connections>
