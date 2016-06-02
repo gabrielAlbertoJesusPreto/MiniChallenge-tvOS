@@ -15,7 +15,7 @@ class ModelManager {
     var questions = [Question]()
     var currentQuestion = 0
     
-    func getQuestions(completionHandler: (sucess:Bool) -> ()) {
+    func getQuestions(completionHandler: (questions:[Question]) -> ()) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Question", predicate: predicate)
         publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) in
@@ -30,7 +30,7 @@ class ModelManager {
                         self.questions.append(questionObject)
                 }
                     self.questions = self.questions.shuffle()
-                    completionHandler(sucess: true)
+                    completionHandler(questions: self.questions)
                 
             } else {
                 print(#function,"Erro na listagem de perguntas \(error)")

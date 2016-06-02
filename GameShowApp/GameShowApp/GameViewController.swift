@@ -76,7 +76,8 @@ class GameViewController: UIViewController, GameViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         aux = self.viewTime.frame.width
-        
+        ModelManager.sharedInstance.questions.removeAll()
+        ModelManager.sharedInstance.currentQuestion = 0
         outDoSomething()
         activiryIndicator.hidden = false
         activiryIndicator.startAnimating()

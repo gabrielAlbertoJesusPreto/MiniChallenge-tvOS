@@ -74,7 +74,6 @@ class GamePresenter: GamePresenterInput {
         var viewModel = GameScoreViewModel()
         let textAlert = "Parabéns você terminou o jogo"
         let title = "Fim de jogo"
-        
         viewModel.textAlert = textAlert
         viewModel.title = title
         output.displayAlertScore(viewModel)
