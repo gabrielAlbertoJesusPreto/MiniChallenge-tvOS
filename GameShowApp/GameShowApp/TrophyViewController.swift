@@ -23,6 +23,7 @@ class TrophyViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TrophyViewController.showError), name: "ErrorTrophy", object: nil)
             
         self.activityIndicator.hidden = false
         self.activityIndicator.startAnimating()
@@ -131,4 +132,11 @@ extension TrophyViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     }
 
+    func showError() {
+         let alert = UIAlertController(title: "Erro de conexão", message: "Desculpe, por favor verifique a conexão e se está conectado ao iCloud e tente novamente", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

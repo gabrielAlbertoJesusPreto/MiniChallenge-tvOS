@@ -58,14 +58,3 @@ struct GameScoreViewModel {
     var title:String?
 }
 
-struct GameNextQuestionRequest {
-    
-}
-
-struct GameNextQuestionResponse {
-    
-}
-
-struct GameNextQuestionViewModel {
-    
-}

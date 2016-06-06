@@ -25,7 +25,7 @@ protocol GameViewControllerInput {
 }
 
 protocol GameViewControllerOutput {
-    func doSomething()
+    func doFirstQuestion()
     //func selectAnswer(request: GameScoreRequest)
     func nextQuestion()
     func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
@@ -75,18 +75,31 @@ class GameViewController: UIViewController, GameViewControllerInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        aux = self.viewTime.frame.width
-        ModelManager.sharedInstance.questions.removeAll()
-        ModelManager.sharedInstance.currentQuestion = 0
-        outDoSomething()
+        let reachability = Reachability()
         activiryIndicator.hidden = false
         activiryIndicator.startAnimating()
         
-        score = 0
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameViewController.showError), name: "Algum Erro", object: nil)
+
+        if reachability.networkVerification() {
+            aux = self.viewTime.frame.width + 90
+            ModelManager.sharedInstance.questions.removeAll()
+            ModelManager.sharedInstance.currentQuestion = 0
+            outDoSomething()
+            score = 0
+            
+        } else {
+            errorMessage()
+            print("Erro de conexao")
+        }
+        
+    }
+    override func viewWillDisappear(animated: Bool) {
+        timmer.invalidate()
     }
     
     func outDoSomething() {
-        output.doSomething()
+        output.doFirstQuestion()
     }
     // MARK: Event handling
     
@@ -98,16 +111,23 @@ class GameViewController: UIViewController, GameViewControllerInput {
         let button = sender as? UIButton
         timmer.invalidate()
         selectButton = button!
+        self.view.userInteractionEnabled = false
         self.verifyCorrectAnswer(sender.tag, button: button!)
         
     }
     
     func upadateProgressBar() {
         if constraintView.constant == aux {
+            self.view.userInteractionEnabled = false
             timmer.invalidate()
             life -= 1
             self.updateLife()
-            self.output.nextQuestion()
+            if life != 0 {
+                self.output.nextQuestion()
+            } else {
+                self.displayResult()
+            }
+            
         } else {
             constraintView.constant = constraintView.constant + 1
         }
@@ -129,24 +149,23 @@ class GameViewController: UIViewController, GameViewControllerInput {
             isCorrect = true
             score = score! + (100*level)
             scoreDidChange()
+            self.output.nextQuestion()
         } else {
             button.backgroundColor = UIColor.redColor()
             life -= 1
             self.updateLife()
-            
-        }
-        if players == nil {
-            if life == 0 {
-                var viewModel = GameScoreViewModel()
-                viewModel.title = "Fim de Jogo"
-                viewModel.title = "Você marcou \(score) pontos"
-                self.displayAlertScore(viewModel)
-            } else {
-                self.output.nextQuestion()
-            }
-        } else {
             self.output.nextQuestion()
         }
+            if life == 0 {
+                self.displayResult()
+            }
+    }
+    
+    func displayResult() {
+        var viewModel = GameScoreViewModel()
+        viewModel.title = "Fim de Jogo"
+        viewModel.title = "Você marcou \(score) pontos"
+        self.displayAlertScore(viewModel)
     }
     
     
@@ -161,7 +180,6 @@ class GameViewController: UIViewController, GameViewControllerInput {
     }
     
     func updateLife() {
-        if players == nil {
             if life == 3 {
                 self.life1Image.hidden = false
                 self.life2Image.hidden = false
@@ -179,12 +197,20 @@ class GameViewController: UIViewController, GameViewControllerInput {
                 self.life2Image.hidden = true
                 self.life3Image.hidden = true
             }
-        }
+        
+    }
+    
+    func errorMessage() {
+        var model = GameScoreViewModel()
+        model.title = "Erro de conexão"
+        model.textAlert = "Desculpe, por favor verifique a conexão e se está conectado ao iCloud e tente novamente"
+        self.displayAlertScore(model)
     }
     
     // MARK: Display logic
     func displaySomething(viewModel: GameViewModel) {
         dispatch_async(dispatch_get_main_queue()) {
+            self.view.userInteractionEnabled = true
             self.answer0Button.setNeedsFocusUpdate()
             self.activiryIndicator.stopAnimating()
             self.activiryIndicator.hidden = true
@@ -229,10 +255,17 @@ class GameViewController: UIViewController, GameViewControllerInput {
         print("Pronto!!!! - Novo Troféu")
         
         let alertController = UIAlertController(title: "Parabéns", message: viewModel.message, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK, Entendi", style: .Default, handler: nil)
+        let action = UIAlertAction(title: "Legal 👍", style: .Default, handler: nil)
         alertController.addAction(action)
         self.presentViewController(alertController, animated: true
             , completion: nil)
+    }
+    
+    func showError() {
+        dispatch_async(dispatch_get_main_queue()) { 
+            print("Não funfou")
+            self.errorMessage()
+        }
     }
 }
 

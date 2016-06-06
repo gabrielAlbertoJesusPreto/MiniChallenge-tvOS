@@ -307,8 +307,8 @@
                                     <action selector="selectAnswer:" destination="A6L-A4-pHi" eventType="primaryActionTriggered" id="kdQ-Jl-zPA"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelQuestion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
-                                <rect key="frame" x="20" y="200" width="1880" height="137"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelQuestion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-DX-gGl">
+                                <rect key="frame" x="110" y="200" width="1700" height="137"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -358,34 +358,33 @@
                                 </constraints>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OO3-Nr-Xeo">
-                                <rect key="frame" x="20" y="29" width="1880" height="10"/>
+                                <rect key="frame" x="110" y="60" width="1700" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="etN-2I-5A6"/>
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelPlayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-jp-jbo">
-                                <rect key="frame" x="841" y="68" width="239" height="60"/>
+                                <rect key="frame" x="841" y="90" width="239" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="0lp-Vd-0m6"/>
+                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="90" id="0lp-Vd-0m6"/>
                             <constraint firstItem="Xvu-99-6zZ" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leading" id="1NE-t1-GY6"/>
                             <constraint firstItem="LSg-Aa-WN0" firstAttribute="leading" secondItem="jUL-w0-gUT" secondAttribute="trailing" constant="15" id="1v8-n3-JKy"/>
                             <constraint firstItem="1DD-47-XZE" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="170" id="3kY-Jp-QkX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" constant="90" id="6Sq-6N-4vY"/>
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="1DD-47-XZE" secondAttribute="bottom" constant="123" id="6jz-Jp-rTD"/>
-                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="200" id="86d-3M-4Hj"/>
                             <constraint firstAttribute="trailing" secondItem="Xvu-99-6zZ" secondAttribute="trailing" id="9D0-ol-Acg"/>
                             <constraint firstItem="uwV-Lq-8at" firstAttribute="trailing" secondItem="Q5u-Pu-vPo" secondAttribute="trailing" id="A42-Pd-FhI"/>
+                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" constant="90" id="Bhd-FL-2DB"/>
                             <constraint firstItem="Q5u-Pu-vPo" firstAttribute="centerX" secondItem="ibC-Pl-iHu" secondAttribute="centerX" id="DlG-ql-Dge"/>
                             <constraint firstItem="LSg-Aa-WN0" firstAttribute="centerY" secondItem="jUL-w0-gUT" secondAttribute="centerY" id="F52-2L-Jr0"/>
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="Xvu-99-6zZ" secondAttribute="bottom" id="FJg-pQ-spl"/>
-                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="29" id="G5I-Ed-StE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pq8-DX-gGl" secondAttribute="trailing" id="H8B-zu-aiL"/>
-                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="CwJ-jp-jbo" secondAttribute="bottom" constant="72" id="Inf-WC-11R"/>
+                            <constraint firstItem="OO3-Nr-Xeo" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="60" id="G5I-Ed-StE"/>
                             <constraint firstItem="5s5-6p-Hoh" firstAttribute="leading" secondItem="LSg-Aa-WN0" secondAttribute="trailing" constant="15" id="OKR-2c-WfV"/>
                             <constraint firstItem="jUL-w0-gUT" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="107" id="QdC-rk-sUg"/>
                             <constraint firstItem="ibC-Pl-iHu" firstAttribute="top" secondItem="Q5u-Pu-vPo" secondAttribute="bottom" constant="82" id="RUe-MK-lfp"/>
@@ -399,8 +398,9 @@
                             <constraint firstItem="ECX-l6-eFW" firstAttribute="top" secondItem="ibC-Pl-iHu" secondAttribute="bottom" constant="123" id="n8v-Vz-p6X"/>
                             <constraint firstItem="ZiE-qc-4L5" firstAttribute="centerY" secondItem="ZrL-TM-Fkb" secondAttribute="centerY" id="q9K-lJ-khi"/>
                             <constraint firstItem="Xvu-99-6zZ" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" id="rSD-Rh-yCw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OO3-Nr-Xeo" secondAttribute="trailing" id="x9C-gd-o1e"/>
-                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="leading" secondItem="ZrL-TM-Fkb" secondAttribute="leadingMargin" id="xAt-It-lOS"/>
+                            <constraint firstItem="Pq8-DX-gGl" firstAttribute="top" secondItem="CwJ-jp-jbo" secondAttribute="bottom" constant="50" id="sRV-Ou-wxn"/>
+                            <constraint firstItem="CwJ-jp-jbo" firstAttribute="top" secondItem="OO3-Nr-Xeo" secondAttribute="bottom" constant="20" id="wrW-6n-WvW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OO3-Nr-Xeo" secondAttribute="trailing" constant="90" id="x9C-gd-o1e"/>
                             <constraint firstItem="uwV-Lq-8at" firstAttribute="top" secondItem="U2v-IQ-4nQ" secondAttribute="bottom" constant="100" id="yAg-gA-vz3"/>
                         </constraints>
                     </view>

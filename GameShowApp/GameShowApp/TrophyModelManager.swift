@@ -35,8 +35,12 @@ class TrophyModelManager {
                     completionHandler(trophies: trophies)
                     
                 } else {
+                    NSNotificationCenter.defaultCenter().postNotificationName("ErrorTrophy", object: self)
                     print(#function,"Erro na listagem de troféus \(error)")
                 }
+            } else {
+                NSNotificationCenter.defaultCenter().postNotificationName("ErrorTrophy", object: self)
+                print(#function,"Erro na listagem de troféus \(error)")
             }
         }
     }
@@ -61,8 +65,12 @@ class TrophyModelManager {
                     completionHandler(trophies: trophies)
                     
                 } else {
+                    NSNotificationCenter.defaultCenter().postNotificationName("ErrorTrophy", object: self)
                     print(#function,"Erro na listagem de troféus \(error)")
                 }
+            } else {
+                NSNotificationCenter.defaultCenter().postNotificationName("ErrorTrophy", object: self)
+                print(#function,"Erro na listagem de troféus \(error)")
             }
         }
     }

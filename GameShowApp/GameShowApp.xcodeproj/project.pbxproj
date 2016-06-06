@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1120B9B41D05914900167452 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120B9B31D05914900167452 /* Reachability.swift */; };
 		1129CC2D1CE5FD8C004B859F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CC2C1CE5FD8C004B859F /* CustomButton.swift */; };
 		113A01AD1CF3361A00D61B0D /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01A91CF3361A00D61B0D /* Trophy.swift */; };
 		113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1120B9B31D05914900167452 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1129CC2C1CE5FD8C004B859F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		113A01A91CF3361A00D61B0D /* Trophy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trophy.swift; path = ../Trophy.swift; sourceTree = "<group>"; };
 		113A01AA1CF3361A00D61B0D /* TrophyManaged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrophyManaged.swift; path = ../TrophyManaged.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1120B9B21D05912500167452 /* InternetVerification */ = {
+			isa = PBXGroup;
+			children = (
+				1120B9B31D05914900167452 /* Reachability.swift */,
+			);
+			name = InternetVerification;
+			sourceTree = "<group>";
+		};
 		113A01A61CF3309200D61B0D /* ModelManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		5E098F291CE3592E00F939A5 /* GameShowApp */ = {
 			isa = PBXGroup;
 			children = (
+				1120B9B21D05912500167452 /* InternetVerification */,
 				113A01AF1CF3365A00D61B0D /* CoreData */,
 				113A01A61CF3309200D61B0D /* ModelManager */,
 				11473AD61CF32CF400842975 /* Game */,
@@ -264,6 +275,7 @@
 				113A01BA1CF3381F00D61B0D /* GameModels.swift in Sources */,
 				113BBB0A1CF49BA900E75280 /* GameScoreWorker.swift in Sources */,
 				5E2DC4DA1CF5E27100928843 /* TrophyManager.swift in Sources */,
+				1120B9B41D05914900167452 /* Reachability.swift in Sources */,
 				113A01AE1CF3361A00D61B0D /* TrophyManaged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

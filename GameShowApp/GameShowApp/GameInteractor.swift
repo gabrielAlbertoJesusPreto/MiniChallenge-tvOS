@@ -12,7 +12,7 @@
 import UIKit
 
 protocol GameInteractorInput {
-    func doSomething()
+    func doFirstQuestion()
     func selectAnswer(request: GameScoreRequest)
     func nextQuestion()
     func doVerificationNewTrophy(request: GameRequest.VerifyNewTRophy)
@@ -34,7 +34,7 @@ class GameInteractor: GameInteractorInput {
   
   // MARK: Business logic
   
-  func doSomething() {
+  func doFirstQuestion() {
     worker = GameWorker()
     worker.getAnswerWork { (question, sucess) in
         var response = GameResponse()
